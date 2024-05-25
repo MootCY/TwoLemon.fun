@@ -1,0 +1,31 @@
+body{
+    font-family: sans-serif;
+    background-color: hsl(0, 0%, 20%);
+    overflow: hidden;
+    text-shadow: 5px 5px 5px hsl(0, 0%, 30%);
+}
+#headerTitle{
+    text-align: center;
+    font-size: 2.5em;
+    border: 5px solid black;
+    border-radius: 20px;
+    background-color: hsl(0, 0%, 40%);
+}
+#calculatorGameIcon{
+    width: 200px;
+    height: 200px;
+    background-color: hsl(0, 0%, 40%);
+    display: inline-block;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 1.5em;
+    margin-left: 20px;
+    border: 5px solid black;
+    cursor: pointer;
+}
+#calculatorGameIcon:hover{
+    background-color: hsl(0, 0%, 50%);
+}
+#calculatorGameIcon:active{
+    background-color: hsl(0, 0%, 60%);
+}
