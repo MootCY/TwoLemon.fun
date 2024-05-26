@@ -1,7 +1,6 @@
 body{
     font-family: sans-serif;
     background-color: hsl(0, 0%, 20%);
-    overflow: hidden;
     text-shadow: 5px 5px 5px hsl(0, 0%, 30%);
 }
 #headerTitle{
@@ -13,12 +12,12 @@ body{
 }
 #iconContainer{
     display: flex;
+    justify-content: center; 
 }
 #calculatorGameIcon{
     width: 200px;
     height: 200px;
     background-color: hsl(0, 0%, 40%);
-    display: inline-block;
     border-radius: 20px;
     text-align: center;
     font-size: 1.5em;
@@ -36,7 +35,6 @@ body{
     width: 200px;
     height: 200px;
     background-color: hsl(0, 0%, 40%);
-    display: inline-block;
     border-radius: 20px;
     text-align: center;
     font-size: 1.5em;
