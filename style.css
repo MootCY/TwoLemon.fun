@@ -1,7 +1,6 @@
 body{
     font-family: sans-serif;
     background-color: hsl(0, 0%, 100%);
-    text-shadow: 5px 5px 5px hsl(0, 0%, 30%);
 }
 #headerTitle{
     text-align: center;
