@@ -11,6 +11,9 @@ body{
     border-radius: 20px;
     background-color: hsl(0, 0%, 40%);
 }
+#iconContainer{
+    display: grid;
+}
 #calculatorGameIcon{
     width: 200px;
     height: 200px;
@@ -27,5 +30,23 @@ body{
     background-color: hsl(0, 0%, 50%);
 }
 #calculatorGameIcon:active{
+    background-color: hsl(0, 0%, 60%);
+}
+#clickerGameIcon{
+    width: 200px;
+    height: 200px;
+    background-color: hsl(0, 0%, 40%);
+    display: inline-block;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 1.5em;
+    margin-left: 20px;
+    border: 5px solid black;
+    cursor: pointer;
+}
+#clickerGameIcon:hover{
+    background-color: hsl(0, 0%, 50%);
+}
+#clickerGameIcon:active{
     background-color: hsl(0, 0%, 60%);
 }
