@@ -1,50 +1,53 @@
 body{
     font-family: sans-serif;
-    background-color: hsl(0, 0%, 20%);
+    background-color: hsl(0, 0%, 100%);
     text-shadow: 5px 5px 5px hsl(0, 0%, 30%);
 }
 #headerTitle{
     text-align: center;
     font-size: 2.5em;
-    border: 5px solid black;
+    border: 5px solid hsl(50, 100%, 50%);
     border-radius: 20px;
-    background-color: hsl(0, 0%, 40%);
+    background-color: hsl(60, 100%, 50%);
+    color: white;
 }
 #iconContainer{
     display: flex;
     justify-content: center; 
 }
-#calculatorGameIcon{
+#calculatorIcon{
     width: 200px;
     height: 200px;
-    background-color: hsl(0, 0%, 40%);
+    background-color: hsl(50, 100%, 50%);
     border-radius: 20px;
     text-align: center;
     font-size: 1.5em;
     margin-left: 20px;
-    border: 5px solid black;
+    border: 5px solid hsl(50, 100%, 50%);
     cursor: pointer;
+    color: white;
 }
-#calculatorGameIcon:hover{
-    background-color: hsl(0, 0%, 50%);
+#calculatorIcon:hover{
+    background-color: hsl(50, 100%, 60%);
 }
-#calculatorGameIcon:active{
-    background-color: hsl(0, 0%, 60%);
+#calculatorIcon:active{
+    background-color: hsl(50, 100%, 70%);
 }
 #clickerGameIcon{
     width: 200px;
     height: 200px;
-    background-color: hsl(0, 0%, 40%);
+    background-color: hsl(50, 100%, 50%);
     border-radius: 20px;
     text-align: center;
     font-size: 1.5em;
     margin-left: 20px;
-    border: 5px solid black;
+    border: 5px solid hsl(50, 100%, 50%);
     cursor: pointer;
+    color: white;
 }
 #clickerGameIcon:hover{
-    background-color: hsl(0, 0%, 50%);
+    background-color: hsl(50, 100%, 60%);
 }
 #clickerGameIcon:active{
-    background-color: hsl(0, 0%, 60%);
+    background-color: hsl(50, 100%, 70%);
 }
