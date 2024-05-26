@@ -12,7 +12,7 @@ body{
     background-color: hsl(0, 0%, 40%);
 }
 #iconContainer{
-    display: grid;
+    display: flex;
 }
 #calculatorGameIcon{
     width: 200px;
