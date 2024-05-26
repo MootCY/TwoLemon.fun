@@ -1,6 +1,6 @@
 body{
     font-family: sans-serif;
-    background-color: hsl(0, 0%, 100%);
+    background-color: hsl(0, 0%, 90%);
 }
 #headerTitle{
     text-align: center;
@@ -17,7 +17,7 @@ body{
 #calculatorIcon{
     width: 200px;
     height: 200px;
-    background-color: hsl(50, 100%, 50%);
+    background-color: hsl(60, 100%, 50%);
     border-radius: 20px;
     text-align: center;
     font-size: 1.5em;
@@ -27,15 +27,15 @@ body{
     color: white;
 }
 #calculatorIcon:hover{
-    background-color: hsl(50, 100%, 60%);
+    background-color: hsl(60, 100%, 60%);
 }
 #calculatorIcon:active{
-    background-color: hsl(50, 100%, 70%);
+    background-color: hsl(60, 100%, 70%);
 }
 #clickerGameIcon{
     width: 200px;
     height: 200px;
-    background-color: hsl(50, 100%, 50%);
+    background-color: hsl(60, 100%, 50%);
     border-radius: 20px;
     text-align: center;
     font-size: 1.5em;
@@ -45,8 +45,8 @@ body{
     color: white;
 }
 #clickerGameIcon:hover{
-    background-color: hsl(50, 100%, 60%);
+    background-color: hsl(60, 100%, 60%);
 }
 #clickerGameIcon:active{
-    background-color: hsl(50, 100%, 70%);
+    background-color: hsl(60, 100%, 70%);
 }
