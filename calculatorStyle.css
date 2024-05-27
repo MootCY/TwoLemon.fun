@@ -12,12 +12,12 @@ body{
     font-size: 5rem;
     text-align: left;
     border: none;
-    background-color: hsl(0, 0%, 85%);
-    color: white;
+    background-color: hsl(0, 0%, 90%);
+    color: hsl(55, 100%, 50%);
 }
 #calculator{
     font-family: arial, sans-serif;
-    background-color: hsl(0, 0%, 90%);
+    background-color: hsl(0, 0%, 95%);
     border-radius: 15px;
     max-width: 500px;
     overflow: hidden;
