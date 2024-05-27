@@ -1,5 +1,5 @@
 body{
-    background-color: hsl(0, 0%, 90%);
+    background-color: hsl(0, 0%, 100%);
     margin: 0;
     display: flex;
     justify-content: center;
@@ -12,12 +12,12 @@ body{
     font-size: 5rem;
     text-align: left;
     border: none;
-    background-color: hsl(0, 0%, 70%);
-    color: hsl(50, 100%, 50%);
+    background-color: hsl(0, 0%, 85%);
+    color: white;
 }
 #calculator{
     font-family: arial, sans-serif;
-    background-color: hsl(0, 0%, 80%);
+    background-color: hsl(0, 0%, 90%);
     border-radius: 15px;
     max-width: 500px;
     overflow: hidden;
