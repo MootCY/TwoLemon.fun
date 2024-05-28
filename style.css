@@ -5,10 +5,10 @@ body{
 #headerTitle{
     text-align: center;
     font-size: 2.5em;
-    border: 5px solid hsl(50, 100%, 50%);
+    border: 5px solid black;
     border-radius: 20px;
     background-color: hsl(55, 100%, 50%);
-    color: white;
+    color: black;
 }
 #iconContainer{
     display: flex;
@@ -22,9 +22,9 @@ body{
     text-align: center;
     font-size: 1.5em;
     margin-left: 20px;
-    border: 5px solid hsl(50, 100%, 50%);
+    border: 5px solid black;
     cursor: pointer;
-    color: white;
+    color: black;
 }
 #calculatorIcon:hover{
     background-color: hsl(55, 100%, 60%);
@@ -40,9 +40,9 @@ body{
     text-align: center;
     font-size: 1.5em;
     margin-left: 20px;
-    border: 5px solid hsl(50, 100%, 50%);
+    border: 5px solid black;
     cursor: pointer;
-    color: white;
+    color: black;
 }
 #clickerGameIcon:hover{
     background-color: hsl(55, 100%, 60%);
