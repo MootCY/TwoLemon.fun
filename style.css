@@ -8,7 +8,7 @@ body{
     border: 5px solid hsl(50, 100%, 50%);
     border-radius: 20px;
     background-color: hsl(55, 100%, 50%);
-    color: black;
+    color: hsl(0, 0%, 80%);
 }
 #iconContainer{
     display: flex;
@@ -42,7 +42,7 @@ body{
     margin-left: 20px;
     border: 5px solid hsl(50, 100%, 50%);
     cursor: pointer;
-    color: black;
+    color: hsl(0, 0%, 80%);
 }
 #clickerGameIcon:hover{
     background-color: hsl(55, 100%, 60%);
