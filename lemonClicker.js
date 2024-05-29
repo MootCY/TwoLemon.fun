@@ -1,5 +1,10 @@
-const counter = document.getElementById("counter")
+const counter = document.getElementById('counter');
+const lemon = document.getElementById('lemon');
 
-function updateCounter(){
-    counter.value+=1;
-}
+let score = 0;
+
+lemon.addEventListener('click', function() {
+  score++;
+
+  counter.textContent = score;
+});

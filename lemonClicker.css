@@ -1,15 +1,16 @@
 #lemon{
     width: 350px;
     height: 300px;
-    border-radius: 100px;
+    border-radius: 50%;
     background-color: hsl(55, 100%, 50%);
     margin: 100px auto 0 auto;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
     display: inline-block;
 }
 #counter{
     font-family: Airal, sans-serif;
-    width: 100px;
-    height: 100px;
+    font-size: 30px;
     margin: 50px auto 0 auto;
 }
