@@ -12,8 +12,7 @@
     display: block;
 }
 #counter{
-    display: flex;
-    justify-content: center;
+    text-align: center;
     font-family: Airal, sans-serif;
     font-size: 70px;
     margin: 50px auto 0 auto;
