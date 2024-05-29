@@ -1,12 +1,15 @@
 #lemon{
     width: 350px;
     height: 300px;
-    border-radius: 50%;
-    background-color: hsl(55, 100%, 50%);
     margin: 100px auto 0 auto;
     cursor: pointer;
     display: flex;
     justify-content: center;
+}
+#lemon img{
+    width: 100%;
+    height: auto;
+    display: block;
 }
 #counter{
     font-family: Airal, sans-serif;
