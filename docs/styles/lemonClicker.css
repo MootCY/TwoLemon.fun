@@ -6,13 +6,9 @@
     display: flex;
     justify-content: center;
 }
-#lemon:hover{
-    width: 400px;
-    height: 350px;
-}
 #lemon:active{
-    width: 450px;
-    height: 400px;
+    width: 375px;
+    height: 325px;
 }
 #lemon img{
     width: 100%;
@@ -26,4 +22,5 @@
     margin: 50px auto 0 auto;
     background-color: hsl(55, 100%, 50%);
     border: 5px solid hsl(50, 100%, 50%);
+    border-radius: 20px;
 }
