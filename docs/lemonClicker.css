@@ -6,6 +6,14 @@
     display: flex;
     justify-content: center;
 }
+#lemon:hover{
+    width: 400px;
+    height: 350px;
+}
+#lemon:active{
+    width: 450px;
+    height: 400px;
+}
 #lemon img{
     width: 100%;
     height: auto;
@@ -13,7 +21,9 @@
 }
 #counter{
     text-align: center;
-    font-family: Airal, sans-serif;
+    font-family: airal, sans-serif;
     font-size: 70px;
     margin: 50px auto 0 auto;
+    background-color: hsl(55, 100%, 50%);
+    border: 5px solid hsl(50, 100%, 50%);
 }
