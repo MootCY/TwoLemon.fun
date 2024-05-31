@@ -1,3 +1,6 @@
+body{
+    font-family: Arial, sans-serif;
+}
 #lemon{
     width: 350px;
     height: 300px;
@@ -23,4 +26,15 @@
     background-color: hsl(55, 100%, 50%);
     border: 5px solid hsl(50, 100%, 50%);
     border-radius: 20px;
+}
+.shopItems{
+    display: flex;
+    justify-content: right;
+    width: 250px;
+    height: 200px;
+    background-color: hsl(0, 0%, 90%);
+    border: 5px solid hsl(0, 0%, 80%);
+}
+#shopItem1{
+    margin: 70px auto 0 auto;
 }
