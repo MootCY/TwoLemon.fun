@@ -16,7 +16,7 @@ clickMultiplier.addEventListener('click', function() {
     lemons-= clickMultiplierPrice;
     counter.textContent = lemons + " Lemons";
     clickMultiplierPrice+= 25;
-    clickMultiplier.innerHTML = "+1 Lemons per click<br><hr>Cost: " + clickMultiplierPrice + "Lemons";
+    clickMultiplier.textContent = "+1 Lemons per click Cost: " + clickMultiplierPrice + "Lemons";
     lps++;
   }
 });

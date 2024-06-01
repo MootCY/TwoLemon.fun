@@ -43,6 +43,7 @@ hr{
     text-align: center;
     font-size: 30px;
     overflow: hidden;
+    cursor: pointer;
 }
 .shopItems:hover{
     background-color: hsl(55, 100%, 60%);
