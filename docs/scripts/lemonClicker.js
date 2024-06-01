@@ -9,5 +9,12 @@ let clickMultiplierPrice = 25;
 lemon.addEventListener('click', function() {
   lemons+= lps;
 
-  counter.textContent = lemons + " lemons";
+  counter.textContent = lemons + " Lemons";
+});
+clickMultiplier.addEventListener('click', function() {
+  if (lemons >= clickMultiplierPrice) {
+    lemons-= clickMultiplierPrice;
+    lps++;
+  }
+  counter.textContent = lemons;
 });

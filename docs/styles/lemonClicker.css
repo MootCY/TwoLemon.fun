@@ -44,6 +44,6 @@ body{
 .shopItems:active{
     background-color: hsl(0, 0%, 100%);
 }
-#shopItem1{
-    margin: 10px auto 0 auto;
+#clickMultiplier{
+    margin: 0px auto 0 auto;
 }
