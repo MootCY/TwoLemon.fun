@@ -26,17 +26,18 @@ body{
     background-color: hsl(55, 100%, 50%);
     border: 5px solid hsl(50, 100%, 50%);
     border-radius: 20px;
+    overflow: hidden;
 }
 .shopItems{
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     width: 200px;
     height: 150px;
     background-color: hsl(55, 100%, 50%);
     border: 5px solid hsl(50, 100%, 50%);
     border-radius: 20px;
     text-align: center;
-    font-size: 30px;
+    font-size: 50px;
     overflow: hidden;
     cursor: pointer;
 }
