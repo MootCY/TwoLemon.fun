@@ -37,7 +37,7 @@ body{
     border: 5px solid hsl(50, 100%, 50%);
     border-radius: 20px;
     text-align: center;
-    font-size: 50px;
+    font-size: 35px;
     overflow: hidden;
     cursor: pointer;
 }
