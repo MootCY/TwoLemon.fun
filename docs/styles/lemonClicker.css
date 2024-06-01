@@ -8,6 +8,7 @@ body{
     cursor: pointer;
     display: flex;
     justify-content: center;
+    display: inline-block;
 }
 #lemon:active{
     width: 375px;
