@@ -1,10 +1,13 @@
 const counter = document.getElementById('counter');
 const lemon = document.getElementById('lemon');
+const clickMultiplier = document.getElementById('clickMultiplier');
 
-let score = 0;
+let lemons = 0;
+let lps = 1;
+let clickMultiplierPrice = 25;
 
 lemon.addEventListener('click', function() {
-  score++;
+  lemons+= lps;
 
-  counter.textContent = score;
+  counter.textContent = lemons + " lemons";
 });

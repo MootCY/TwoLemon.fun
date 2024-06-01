@@ -29,12 +29,21 @@ body{
 }
 .shopItems{
     display: flex;
-    justify-content: right;
-    width: 250px;
-    height: 200px;
+    justify-content: flex-end;
+    width: 200px;
+    height: 150px;
     background-color: hsl(0, 0%, 90%);
     border: 5px solid hsl(0, 0%, 80%);
+    border-radius: 20px;
+    text-align: center;
+    font-size: 30px;
+}
+.shopItems:hover{
+    background-color: hsl(0, 0%, 95%);
+}
+.shopItems:active{
+    background-color: hsl(0, 0%, 100%);
 }
 #shopItem1{
-    margin: 70px auto 0 auto;
+    margin: 10px auto 0 auto;
 }
