@@ -1,11 +1,6 @@
 body{
     font-family: Arial, sans-serif;
 }
-hr{
-    background-color: hsl(50, 100%, 50%);
-    height: 5px;
-    border: none;
-}
 #lemon{
     width: 350px;
     height: 300px;
@@ -50,7 +45,4 @@ hr{
 }
 .shopItems:active{
     background-color: hsl(55, 100%, 70%);
-}
-#clickMultiplier{
-    margin: 0px auto 0 auto;
 }
