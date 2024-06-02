@@ -31,12 +31,12 @@ body{
 }
 .shopItems{
     position: absolute;
-    top: 100%;
+    top: calc(100% + 20px);
     right: 0;
     width: 200px;
     height: 150px;
     background-color: hsl(0, 0%, 80%);
-    border: 5px solid hsl(0, 0%, 50%);
+    border: 5px solid hsl(0, 0%, 70%);
     border-radius: 20px;
     text-align: center;
     font-size: 30px;
