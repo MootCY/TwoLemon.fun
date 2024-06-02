@@ -19,6 +19,7 @@ body{
     display: block;
 }
 #counter{
+    position: relative;
     text-align: center;
     font-family: airal, sans-serif;
     font-size: 70px;
@@ -29,13 +30,13 @@ body{
     overflow: hidden;
 }
 .shopItems{
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-start;
+    position: absolute;
+    top: 100%;
+    right: 0;
     width: 200px;
     height: 150px;
-    background-color: hsl(0, 0%, 70%);
-    border: 5px solid hsl(0, 0%, 60%);
+    background-color: hsl(0, 0%, 80%);
+    border: 5px solid hsl(0, 0%, 50%);
     border-radius: 20px;
     text-align: center;
     font-size: 30px;
@@ -43,8 +44,8 @@ body{
     cursor: pointer;
 }
 .shopItems:hover{
-    background-color: hsl(0, 0%, 80%);
+    background-color: hsl(0, 0%, 90%);
 }
 .shopItems:active{
-    background-color: hsl(0, 0%, 90%);
+    background-color: hsl(0, 0%, 95%);
 }
