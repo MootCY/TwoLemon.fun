@@ -18,12 +18,6 @@ body{
     height: auto;
     display: block;
 }
-#container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-start;
-    position: relative;
-}
 #counter{
     text-align: center;
     font-family: airal, sans-serif;
@@ -38,7 +32,7 @@ body{
     width: 200px;
     height: 150px;
     background-color: hsl(0, 0%, 80%);
-    border: 5px solid hsl(0, 0%, 75%);
+    border: 5px solid hsl(0, 0%, 70%);
     border-radius: 20px;
     text-align: center;
     font-size: 30px;
