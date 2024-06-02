@@ -19,7 +19,9 @@ body{
     display: block;
 }
 #counter{
-    position: relative;
+    position: absolute;
+    top: 0;
+    right: 0;
     text-align: center;
     font-family: airal, sans-serif;
     font-size: 70px;
@@ -33,7 +35,6 @@ body{
     position: absolute;
     top: 100%;
     right: 0;
-    transform: translate(0, 20px);
     width: 200px;
     height: 150px;
     background-color: hsl(0, 0%, 80%);
