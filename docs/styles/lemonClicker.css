@@ -31,8 +31,9 @@ body{
 }
 .shopItems{
     position: absolute;
-    top: calc(100% + 20px);
+    top: 100%;
     right: 0;
+    transform: translate(0, 20px);
     width: 200px;
     height: 150px;
     background-color: hsl(0, 0%, 80%);
