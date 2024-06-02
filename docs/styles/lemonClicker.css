@@ -29,6 +29,8 @@ body{
     overflow: hidden;
 }
 .shopItems{
+    display: flex;
+    justify-content: flex-end;
     width: 200px;
     height: 150px;
     background-color: hsl(0, 0%, 80%);
