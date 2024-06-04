@@ -18,7 +18,12 @@ body{
     height: auto;
     display: block;
 }
+#container{
+    position: relative;
+}
 #counter{
+    position: absolute;
+    bottom: 0;
     text-align: center;
     font-family: airal, sans-serif;
     font-size: 70px;
@@ -29,8 +34,8 @@ body{
     overflow: hidden;
 }
 .shopItems{
-    display: flex;
-    justify-content: flex-end;
+    position: absolute;
+    bottom: 0;
     width: 200px;
     height: 150px;
     background-color: hsl(0, 0%, 80%);
