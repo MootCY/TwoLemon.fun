@@ -7,6 +7,13 @@ body{
     justify-content: center;
     min-height: 100vh;
 }
+#bottomContainer{
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 #lemon{
     width: 350px;
     height: 300px;
@@ -33,6 +40,7 @@ body{
     border: 5px solid hsl(50, 100%, 50%);
     border-radius: 20px;
     overflow: hidden;
+    width: 100vh;
 }
 .shopItems{
     width: 200px;
@@ -50,7 +58,4 @@ body{
 }
 .shopItems:active{
     background-color: hsl(0, 0%, 95%);
-}
-#counter, .shopItems{
-    margin-top: auto;
 }
