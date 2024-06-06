@@ -43,5 +43,5 @@ lemomsPerSecondMultiplier.addEventListener('click', function() {
 function lpsUpdater(){
     lemons+= lps;
     counter.textContent = lemons + " Lemons";
-    setTimeout(lpsUpdater, 100);
+    setTimeout(lpsUpdater, 200);
 }
