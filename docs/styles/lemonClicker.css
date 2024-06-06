@@ -9,8 +9,8 @@ body{
 }
 #bottomContainer{
     margin-top: auto;
-    display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
 }
 #lemon{
@@ -39,7 +39,7 @@ body{
     border: 5px solid hsl(50, 100%, 50%);
     border-radius: 20px;
     overflow: hidden;
-    width: 100vh;
+    width: 1000px;
 }
 .shopItems{
     width: 200px;
