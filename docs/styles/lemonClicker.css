@@ -52,6 +52,7 @@ body{
     font-size: 30px;
     overflow: hidden;
     cursor: pointer;
+    display: inline-block;
 }
 .shopItems:hover{
     background-color: hsl(0, 0%, 90%);

@@ -29,19 +29,19 @@ clickMultiplier.addEventListener('click', function() {
 lemomsPerSecondMultiplier.addEventListener('click', function() {
     if (lemons >= lemomsPerSecondMultiplierPrice){
       lemons-= lemomsPerSecondMultiplierPrice;
+      counter.textContent = lemons + " Lemons";
       lemomsPerSecondMultiplierPrice+= lemomsPerSecondMultiplierPrice;
       lemomsPerSecondMultiplier.textContent = "+1 Lemons per second Cost: " + lemomsPerSecondMultiplierPrice + " Lemons";
       lps++
       if (lpsBought == false){
         lpsBought = true;
+        lpsUpdater();
       }
     }
 });
 
 function lpsUpdater(){
-  while(true){
     lemons+= lps;
     counter.textContent = lemons + " Lemons";
     setTimeout(lpsUpdater, 100);
-  }
 }
