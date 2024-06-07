@@ -21,7 +21,7 @@ body{
 #lemon{
     width: 350px;
     height: 300px;
-    margin: 100px auto 0 auto;
+    margin: 75px auto 0 auto;
     cursor: pointer;
     display: flex;
     justify-content: center;
