@@ -52,6 +52,8 @@ function lpsUpdater(){
 rebirth.addEventListener('click', function() {
   if (lemons >= rebirthCost) {
     lemons-= rebirthCost;
+    rebirthCost*= 5;
+    rebirth.textContent = "Rebirth Cost: " + rebirthCost + " Lemons"
     counter.textContent = lemons + " Lemons";
     multiplier++;
     lemomsPerSecondMultiplier.textContent = "+" + multiplier + " Lemons per second Cost: " + lemomsPerSecondMultiplierPrice + " Lemons";
