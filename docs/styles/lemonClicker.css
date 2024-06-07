@@ -13,6 +13,11 @@ body{
     align-items: center;
     justify-content: center;
 }
+#shopItemsContainer{
+    background-color: hsl(0, 0%, 70%);
+    border: 5px solid hsl(0, 0%, 60%);
+    border-radius: 20px;
+}
 #lemon{
     width: 350px;
     height: 300px;
