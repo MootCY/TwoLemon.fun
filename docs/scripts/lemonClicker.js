@@ -53,9 +53,11 @@ rebirth.addEventListener('click', function() {
   if (lemons >= rebirthCost) {
     lemons = 0;
     rebirthCost*= 5;
+    lpc = 1;
+    lps = 0;
     rebirth.textContent = "Rebirth Cost: " + rebirthCost + " Lemons"
     counter.textContent = lemons + " Lemons";
-    multiplier++;
+    multiplier+= 5;
     lemomsPerSecondMultiplier.textContent = "+" + multiplier + " Lemons per second Cost: " + lemomsPerSecondMultiplierPrice + " Lemons";
     clickMultiplier.textContent = "+" + multiplier + " Lemons per click Cost: " + clickMultiplierPrice + " Lemons";
   }
