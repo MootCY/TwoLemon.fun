@@ -24,7 +24,7 @@ clickMultiplier.addEventListener('click', function() {
     lemons-= clickMultiplierPrice;
     counter.textContent = lemons + " Lemons";
     clickMultiplierPrice*= 2;
-    clickMultiplier.textContent = "+" + multiplier + " Lemons per click Cost: " + clickMultiplierPrice + " Lemons";
+    clickMultiplier.innerHTML = "+" + multiplier + " Lemons per click<br>Cost: " + clickMultiplierPrice + " Lemons";
     lpc++;
   }
 });
@@ -34,7 +34,7 @@ lemomsPerSecondMultiplier.addEventListener('click', function() {
       lemons-= lemomsPerSecondMultiplierPrice;
       counter.textContent = lemons + " Lemons";
       lemomsPerSecondMultiplierPrice*= 2;
-      lemomsPerSecondMultiplier.textContent = "+" + multiplier + " Lemons per second Cost: " + lemomsPerSecondMultiplierPrice + " Lemons";
+      lemomsPerSecondMultiplier.innerHTML = "+" + multiplier + " Lemons per second<br>Cost: " + lemomsPerSecondMultiplierPrice + " Lemons";
       lps+= multiplier;
       if (lpsBought == false){
         lpsBought = true;
@@ -55,10 +55,10 @@ rebirth.addEventListener('click', function() {
     rebirthCost*= 5;
     lpc = 1;
     lps = 0;
-    rebirth.textContent = "Rebirth Cost: " + rebirthCost + " Lemons"
+    rebirth.innerHTML = "Rebirth<br>Cost: " + rebirthCost + " Lemons"
     counter.textContent = lemons + " Lemons";
     multiplier+= 5;
-    lemomsPerSecondMultiplier.textContent = "+" + multiplier + " Lemons per second Cost: " + lemomsPerSecondMultiplierPrice + " Lemons";
-    clickMultiplier.textContent = "+" + multiplier + " Lemons per click Cost: " + clickMultiplierPrice + " Lemons";
+    lemomsPerSecondMultiplier.innerHTML = "+" + multiplier + " Lemons per second<br>Cost: " + lemomsPerSecondMultiplierPrice + " Lemons";
+    clickMultiplier.innerHTML = "+" + multiplier + " Lemons per click<br>Cost: " + clickMultiplierPrice + " Lemons";
   }
 });
