@@ -45,15 +45,16 @@ function update(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     ctx.drawImage(lemonImg, lemonX, lemonY, lemonSize, lemonSize);
-
+    
+    ctx.fillStyle("blue");
     ctx.fillRect(playerX, playerY, playerSize, playerSize);
 
-    ctx.font = "50px Arial";
-    ctx.fillText(score,canvas.width/2,50);
+    ctx.font = "20px Arial";
+    ctx.fillText(score,canvas.width/2,10);
 
     if(playerX + playerSize > lemonX && playerY + playerSize > lemonY && lemonX + lemonSize > playerX && lemonY + lemonSize > playerY){
-        lemonX = Math.random()*canvas.width - lemonSize
-        lemonY = Math.random()*canvas.height - lemonSize;
+        lemonX = Math.random()*canvas.width - 100;
+        lemonY = Math.random()*canvas.height - 100;
         score++;
     }
 
