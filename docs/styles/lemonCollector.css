@@ -16,10 +16,11 @@ body{
 }
 
 #scoreContainer{
-    position: absolute;
+    position: relative;
 }
 
 #scoreCounter{
-    position: relative;
-    bottom: 100%;
+    position: absolute;
+    bottom: 0;
+    font-size: 2em;
 }

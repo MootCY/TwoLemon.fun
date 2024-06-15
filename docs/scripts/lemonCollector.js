@@ -49,8 +49,8 @@ function update(){
     ctx.fillRect(playerX, playerY, playerSize, playerSize);
 
     if(playerX + playerSize > lemonX && playerY + playerSize > lemonY && lemonX + lemonSize > playerX && lemonY + lemonSize > playerY){
-        lemonX = Math.floor(Math.random()*800-lemonSize) + 1;
-        lemonY = Math.floor(Math.random()*600-lemonSize) + 1;
+        lemonX = Math.floor(Math.random()*400-lemonSize) + 1;
+        lemonY = Math.floor(Math.random()*300-lemonSize) + 1;
         score++;
         scoreCounter.textContent = score;
     }
