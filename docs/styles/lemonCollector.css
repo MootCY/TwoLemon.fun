@@ -2,9 +2,9 @@ body{
     text-align: center;
 }
 #canvas{
-width: 800px;
-height: 600px;
-background-color: hsl(120, 100%, 35%);
-border: 5px solid black;
-border-radius: 20px;
+    width: 800px;
+    height: 600px;
+    background-color: hsl(120, 100%, 35%);
+    border: 5px solid black;
+    border-radius: 20px;
 }

@@ -33,7 +33,7 @@ function update(){
     playerY += playerYV;
     ctx.fillRect(playerX, playerY, playerSize, playerSize);
 
-    ctx.drawImage(lemonImg, undefined, undefined, undefined, undefined, lemonX, lemonY, lemonSize, lemonSize);
+    ctx.drawImage(lemonImg, lemonX, lemonY, lemonSize, lemonSize);
 
     if(playerX + playerSize > lemonX && playerY + playerSize > lemonY && lemonX + lemonSize > playerX && lemonY + lemonSize > playerY){
         console.log("Collision");
