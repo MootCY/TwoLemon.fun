@@ -1,11 +1,18 @@
 let canvas = document.getElementById('canvas');
 let ctx = canvas.getContext("2d");
 
-let playerX = canvas.width/2;
-let playerY = canvas.height/2;
+let playerX = 400;
+let playerY = 300;
 let playerXV = 0;
 let playerYV = 0;
 let playerSize = 50;
+
+let lemonX = 0;
+let lemonY = 0;
+let lemonSize = 30;
+
+const lemonImg = new Image();
+lemonImg.src='Lemon.png';
 
 window.addEventListener("keydown", function(e){
     if(e.code == "KeyW") playerYV = -5;
@@ -21,9 +28,13 @@ window.addEventListener("keyup", function(e){
 
 function update(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+
     playerX += playerXV;
     playerY += playerYV;
     ctx.fillRect(playerX, playerY, playerSize, playerSize);
+
+    ctx.drawImage(lemonImg, lemonX, lemonY, lemonSize, lemonSize);
+
     requestAnimationFrame(update);
 }
 
