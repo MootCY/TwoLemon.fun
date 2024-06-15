@@ -12,7 +12,7 @@ let lemonY = 0;
 let lemonSize = 30;
 
 const lemonImg = new Image();
-lemonImg.src='Lemon.png';
+lemonImg.src='images/Lemon.png';
 
 window.addEventListener("keydown", function(e){
     if(e.code == "KeyW") playerYV = -5;
