@@ -12,15 +12,5 @@ body{
     border: 5px solid black;
     border-radius: 20px;
     display: block;
-    margin: 20px auto;
-}
-
-#scoreContainer{
-    position: relative;
-}
-
-#scoreCounter{
-    position: absolute;
-    bottom: 0;
-    font-size: 2em;
+    margin-top: auto;
 }

@@ -4,14 +4,14 @@ let ctx = canvas.getContext("2d");
 let scoreCounter = document.getElementById('scoreCounter');
 let score = 0;
 
-let playerX = 0;
-let playerY = 0;
+let playerX = canvas.width/2;
+let playerY = canvas.height/2;
 let playerXV = 0;
 let playerYV = 0;
 let playerSize = 30;
 
-let lemonX = 70;
-let lemonY = 0;
+let lemonX = canvas.width/2;
+let lemonY = canvas.height/2;
 let lemonSize = 50;
 
 const lemonImg = new Image();
@@ -48,11 +48,13 @@ function update(){
 
     ctx.fillRect(playerX, playerY, playerSize, playerSize);
 
+    ctx.font = "50px Arial";
+    ctx.fillText(score,canvas.width/2,50);
+
     if(playerX + playerSize > lemonX && playerY + playerSize > lemonY && lemonX + lemonSize > playerX && lemonY + lemonSize > playerY){
-        lemonX = Math.floor(Math.random()*400-lemonSize) + 1;
-        lemonY = Math.floor(Math.random()*300-lemonSize) + 1;
+        lemonX = Math.random()*canvas.width - lemonSize
+        lemonY = Math.random()*canvas.height - lemonSize;
         score++;
-        scoreCounter.textContent = score;
     }
 
     playerX += playerXV;
