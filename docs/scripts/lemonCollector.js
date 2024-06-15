@@ -12,9 +12,12 @@ let lemonY = 400;
 let lemonSize = 30;
 
 const lemonImg = new Image();
-lemonImg.src = 'images/Lemon.png';
+lemonImg.src="images/Lemon.png";
 
-update();
+lemonImg.onload = function() {
+    update();
+    console.log("Image loaded");
+};
 
 window.addEventListener("keydown", function(e){
     if(e.code == "KeyW") playerYV = -5;
@@ -31,17 +34,16 @@ window.addEventListener("keyup", function(e){
 function update(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    playerX += playerXV;
-    playerY += playerYV;
     ctx.fillRect(playerX, playerY, playerSize, playerSize);
 
-    lemonImg.onload = function() {
     ctx.drawImage(lemonImg, lemonX, lemonY, lemonSize, lemonSize);
-    };
 
     if(playerX + playerSize > lemonX && playerY + playerSize > lemonY && lemonX + lemonSize > playerX && lemonY + lemonSize > playerY){
         console.log("Collision");
     }
+
+    playerX += playerXV;
+    playerY += playerYV;
 
     requestAnimationFrame(update);
 }

@@ -1,10 +1,15 @@
-body{
+body {
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
-#canvas{
+
+#canvas {
     width: 800px;
     height: 600px;
     background-color: hsl(120, 100%, 35%);
     border: 5px solid black;
     border-radius: 20px;
+    display: block;
+    margin: 20px auto;
 }
