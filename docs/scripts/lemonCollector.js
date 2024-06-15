@@ -44,19 +44,24 @@ window.addEventListener("keyup", function(e){
 });
 
 function update(){
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    console.log("Updating...");
 
-    ctx.fillRect(playerX, playerY, playerSize, playerSize);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    console.log("Cleared items");
 
     ctx.drawImage(lemonImg, lemonX, lemonY, lemonSize, lemonSize);
+    console.log("Drew lemon");
+
+    ctx.fillRect(playerX, playerY, playerSize, playerSize);
+    console.log("Drew player");
 
     if(playerX + playerSize > lemonX && playerY + playerSize > lemonY && lemonX + lemonSize > playerX && lemonY + lemonSize > playerY){
-        console.log("Collision");
+        console.log("Collision detected");
     }
 
     playerX += playerXV;
     playerY += playerYV;
     
-    console.log("Updated sucsessfully");
+    console.log("Updated successfully");
     requestAnimationFrame(update);
 }
