@@ -14,9 +14,7 @@ let lemonSize = 30;
 const lemonImg = new Image();
 lemonImg.src = 'images/Lemon.png';
 
-lemonImg.onload = function() {
-    update();
-};
+update();
 
 window.addEventListener("keydown", function(e){
     if(e.code == "KeyW") playerYV = -5;
@@ -37,10 +35,11 @@ function update(){
     playerY += playerYV;
     ctx.fillRect(playerX, playerY, playerSize, playerSize);
 
+    lemonImg.onload = function() {
     ctx.drawImage(lemonImg, lemonX, lemonY, lemonSize, lemonSize);
+    };
 
-    if(playerX + playerSize > lemonX && playerY + playerSize > lemonY &&
-       lemonX + lemonSize > playerX && lemonY + lemonSize > playerY){
+    if(playerX + playerSize > lemonX && playerY + playerSize > lemonY && lemonX + lemonSize > playerX && lemonY + lemonSize > playerY){
         console.log("Collision");
     }
 
