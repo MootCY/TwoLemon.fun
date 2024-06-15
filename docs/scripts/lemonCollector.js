@@ -1,14 +1,14 @@
 let canvas = document.getElementById('canvas');
 let ctx = canvas.getContext("2d");
 
-let playerX = 800;
-let playerY = 600;
+let playerX = 400;
+let playerY = 400;
 let playerXV = 0;
 let playerYV = 0;
 let playerSize = 50;
 
-let lemonX = 600;
-let lemonY = 600;
+let lemonX = 300;
+let lemonY = 400;
 let lemonSize = 30;
 
 const lemonImg = new Image();
