@@ -46,7 +46,6 @@ function update(){
 
     ctx.drawImage(lemonImg, lemonX, lemonY, lemonSize, lemonSize);
     
-    ctx.fillStyle("blue");
     ctx.fillRect(playerX, playerY, playerSize, playerSize);
 
     ctx.font = "20px Arial";
