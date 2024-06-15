@@ -48,8 +48,8 @@ function update(){
     
     ctx.fillRect(playerX, playerY, playerSize, playerSize);
 
-    ctx.font = "20px Arial";
-    ctx.fillText(score,canvas.width/2,10);
+    ctx.font = "40px Arial";
+    ctx.fillText(score,canvas.width/2,40);
 
     if(playerX + playerSize > lemonX && playerY + playerSize > lemonY && lemonX + lemonSize > playerX && lemonY + lemonSize > playerY){
         lemonX = Math.random()*canvas.width - 100;
