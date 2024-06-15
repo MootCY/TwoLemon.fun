@@ -20,10 +20,22 @@ lemonImg.onload = function() {
 };
 
 window.addEventListener("keydown", function(e){
-    if(e.code == "KeyW") playerYV = -5;
-    if(e.code == "KeyS") playerYV = 5;
-    if(e.code == "KeyD") playerXV = 5;
-    if(e.code == "KeyA") playerXV = -5;
+    if(e.code == "KeyW"){
+        playerYV = -5;
+        console.log("Key W pressed");
+    }
+    if(e.code == "KeyS"){
+        playerYV = 5
+        console.log("Key S pressed");
+    };
+    if(e.code == "KeyD"){
+        playerXV = 5;
+        console.log("Key D pressed");
+    }
+    if(e.code == "KeyA"){
+        playerXV = -5
+        console.log("Key A pressed");
+    };
 });
 
 window.addEventListener("keyup", function(e){
@@ -44,6 +56,7 @@ function update(){
 
     playerX += playerXV;
     playerY += playerYV;
-
+    
+    console.log("Updated sucsessfully");
     requestAnimationFrame(update);
 }
