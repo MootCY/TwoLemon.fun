@@ -52,8 +52,8 @@ function update(){
     ctx.fillText(score,canvas.width/2,40);
 
     if(playerX + playerSize > lemonX && playerY + playerSize > lemonY && lemonX + lemonSize > playerX && lemonY + lemonSize > playerY){
-        lemonX = Math.random()*canvas.width - 100;
-        lemonY = Math.random()*canvas.height - 100;
+        lemonX = Math.random()*canvas.width - 200;
+        lemonY = Math.random()*canvas.height - 200;
         score++;
     }
 

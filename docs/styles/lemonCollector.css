@@ -8,10 +8,8 @@ body{
     width: 800px;
     height: 600px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     background-color: hsl(120, 100%, 35%);
     border: 5px solid black;
     border-radius: 20px;
-    display: block;
 }
