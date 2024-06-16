@@ -37,10 +37,10 @@ function update(){
         bulletX = playerX;
         bulletY = playerY;
         ctx.fillRect(bulletX, bulletY, bulletSize, bulletSize);
-        shoot();
+        bulletY--;
     }
 
-    if(bulletY < canvas.width){
+    if(bulletY < 0){
         bulletState = 'notShooting';
     }
 
@@ -49,13 +49,6 @@ function update(){
     playerX+= playerXV;
     playerY+= playerYV;
     requestAnimationFrame(update);
-}
-
-function shoot(){
-    while(bulletState == 'shooting'){
-        bulletY--;
-    }
-    console.log("Bullet despawned");
 }
 
 update()
