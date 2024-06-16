@@ -1,9 +1,9 @@
-let canvas = document.getElementById('canvas');
+const canvas = document.getElementById('canvas');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-let ctx = canvas.getContext("2d");
+const ctx = canvas.getContext("2d");
 
-let scoreCounter = document.getElementById('scoreCounter');
+const scoreCounter = document.getElementById('scoreCounter');
 let score = 0;
 
 let playerX = canvas.width/2;
