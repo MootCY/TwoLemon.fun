@@ -37,7 +37,7 @@ function update(){
         bulletX = playerX;
         bulletY = playerY;
         ctx.fillRect(bulletX, bulletY, bulletSize, bulletSize);
-
+        shoot();
     }
 
     if(bulletY < canvas.width){
