@@ -9,6 +9,8 @@ let playerXV = 0;
 let playerYV = 0;
 let playerSize = 50;
 
+let bulletX = 0;
+let bulletY = 0;
 let bulletSize = 30;
 let bulletState = 'notShooting';
 
