@@ -7,11 +7,11 @@ let playerX = canvas.width/2;
 let playerY = canvas.height/2;
 let playerXV = 0;
 let playerYV = 0;
-let playerSize = 50;
+let playerSize = 70;
 
 let bulletX = 0;
 let bulletY = 0;
-let bulletSize = 30;
+let bulletSize = 10;
 let bulletState = 'notShooting';
 
 const playerImg = new Image();
@@ -53,7 +53,7 @@ function update(){
 
 function shoot(){
     while(bulletState == 'shooting'){
-        bulletX++;
+        bulletY--;
     }
     console.log("Bullet despawned");
 }
