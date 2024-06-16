@@ -50,8 +50,8 @@ function update(){
     
     ctx.fillRect(playerX, playerY, playerSize, playerSize);
 
-    ctx.font = "40px Arial";
-    ctx.fillText(score,canvas.width/2,50);
+    ctx.font = "80px Arial";
+    ctx.fillText(score,canvas.width/2,90);
 
     if(playerX + playerSize > lemonX && playerY + playerSize > lemonY && lemonX + lemonSize > playerX && lemonY + lemonSize > playerY){
         score++;
