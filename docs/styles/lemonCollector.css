@@ -1,15 +1,8 @@
 body{
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
 #canvas{
-    width: 800px;
-    height: 600px;
-    display: flex;
-    justify-content: center;
     background-color: hsl(120, 100%, 35%);
-    border: 5px solid black;
-    border-radius: 20px;
 }

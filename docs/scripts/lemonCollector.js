@@ -1,4 +1,6 @@
 let canvas = document.getElementById('canvas');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 let ctx = canvas.getContext("2d");
 
 let scoreCounter = document.getElementById('scoreCounter');
@@ -8,11 +10,11 @@ let playerX = canvas.width/2;
 let playerY = canvas.height/2;
 let playerXV = 0;
 let playerYV = 0;
-let playerSize = 30;
+let playerSize = 10;
 
 let lemonX = canvas.width/2;
 let lemonY = canvas.height/2;
-let lemonSize = 50;
+let lemonSize = 40;
 
 const lemonImg = new Image();
 lemonImg.src="images/Lemon.png";
@@ -23,16 +25,16 @@ lemonImg.onload = function() {
 
 window.addEventListener("keydown", function(e){
     if(e.code == "KeyW"){
-        playerYV = -2;
+        playerYV = -1;
     }
     if(e.code == "KeyS"){
-        playerYV = 2;
+        playerYV = 1;
     }
     if(e.code == "KeyD"){
-        playerXV = 2;
+        playerXV = 1;
     }
     if(e.code == "KeyA"){
-        playerXV = -2;
+        playerXV = -1;
     }
 });
 
@@ -52,9 +54,9 @@ function update(){
     ctx.fillText(score,canvas.width/2,40);
 
     if(playerX + playerSize > lemonX && playerY + playerSize > lemonY && lemonX + lemonSize > playerX && lemonY + lemonSize > playerY){
+        score++;
         lemonX = Math.random()*canvas.width;
         lemonY = Math.random()*canvas.height;
-        score++;
     }
 
     playerX += playerXV;
