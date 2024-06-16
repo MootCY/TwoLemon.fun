@@ -10,9 +10,9 @@ let playerX = canvas.width/2;
 let playerY = canvas.height/2;
 let playerXV = 0;
 let playerYV = 0;
-let playerSize = 10;
+let playerSize = 20;
 
-let lemonX = canvas.width/2;
+let lemonX = canvas.width/1.5;
 let lemonY = canvas.height/2;
 let lemonSize = 40;
 
@@ -25,16 +25,16 @@ lemonImg.onload = function() {
 
 window.addEventListener("keydown", function(e){
     if(e.code == "KeyW"){
-        playerYV = -1;
+        playerYV = -1.5;
     }
     if(e.code == "KeyS"){
-        playerYV = 1;
+        playerYV = 1.5;
     }
     if(e.code == "KeyD"){
-        playerXV = 1;
+        playerXV = 1.5;
     }
     if(e.code == "KeyA"){
-        playerXV = -1;
+        playerXV = -1.5;
     }
 });
 
@@ -51,7 +51,7 @@ function update(){
     ctx.fillRect(playerX, playerY, playerSize, playerSize);
 
     ctx.font = "40px Arial";
-    ctx.fillText(score,canvas.width/2,40);
+    ctx.fillText(score,canvas.width/2,50);
 
     if(playerX + playerSize > lemonX && playerY + playerSize > lemonY && lemonX + lemonSize > playerX && lemonY + lemonSize > playerY){
         score++;

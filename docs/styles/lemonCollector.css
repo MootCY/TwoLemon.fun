@@ -1,8 +1,10 @@
 body{
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 #canvas{
     background-color: hsl(120, 100%, 35%);
+    border: 10px solid black;
 }
