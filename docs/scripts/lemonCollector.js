@@ -57,6 +57,12 @@ function update(){
         score++;
         lemonX = Math.random()*canvas.width;
         lemonY = Math.random()*canvas.height;
+        if (lemonX + lemonSize > canvas.width) {
+            lemonX = Math.random()*canvas.width;
+        }
+        if (lemonY + lemonSize > canvas.height) {
+            lemonY = Math.random()*canvas.height;  
+        }
     }
 
     playerX += playerXV;
