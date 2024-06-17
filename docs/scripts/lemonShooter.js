@@ -42,7 +42,7 @@ function update(){
 
             bullet.y-= 1;
 
-            if(bulletY < 0){
+            if(bullet.y < 0){
                 bullets.splice(index, 1);
             }
     });
