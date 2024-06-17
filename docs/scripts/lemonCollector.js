@@ -24,18 +24,10 @@ lemonImg.onload = function() {
 };
 
 window.addEventListener("keydown", function(e){
-    if(e.code == "KeyW"){
-        playerYV = -1.5;
-    }
-    if(e.code == "KeyS"){
-        playerYV = 1.5;
-    }
-    if(e.code == "KeyD"){
-        playerXV = 1.5;
-    }
-    if(e.code == "KeyA"){
-        playerXV = -1.5;
-    }
+    if(e.code == "KeyW") playerYV = -2.5;
+    if(e.code == "KeyS") playerYV = 2.5;
+    if(e.code == "KeyD") playerXV = 2.5;
+    if(e.code == "KeyA") playerXV = -2.5;
 });
 
 window.addEventListener("keyup", function(e){

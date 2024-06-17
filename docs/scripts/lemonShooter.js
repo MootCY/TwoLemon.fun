@@ -22,7 +22,7 @@ window.addEventListener('keydown', function(e){
     if(e.code == "KeyS") playerYV = 1.5;
     if(e.code == "KeyD") playerXV = 1.5;
     if(e.code == "KeyA") playerXV = -1.5;
-    if(e.code == "Space") bulletState = 'shooting';
+    if(bulletState == 'notShooting') if(e.code == "Space") bulletState = 'shooting'; bulletX = (playerX - 35); bulletY = (playerY + 35);
 });
 
 window.addEventListener("keyup", function(e){
@@ -34,14 +34,11 @@ function update(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     if(bulletState == 'shooting'){
-        bulletX = playerX;
-        bulletY = playerY;
         ctx.fillRect(bulletX, bulletY, bulletSize, bulletSize);
         bulletY--;
-    }
-
-    if(bulletY < 0){
-        bulletState = 'notShooting';
+        if(bulletY < 0){
+            bulletState = 'notShooting';
+        }
     }
 
     ctx.drawImage(playerImg, playerX, playerY, playerSize, playerSize);
