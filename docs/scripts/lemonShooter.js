@@ -9,10 +9,9 @@ let playerXV = 0;
 let playerYV = 0;
 let playerSize = 70;
 
-let bulletX = 0;
-let bulletY = 0;
+let bullets = [];
+
 let bulletSize = 10;
-let bulletState = 'notShooting';
 
 const playerImg = new Image();
 playerImg.src = 'images/Lemon.png';
@@ -22,13 +21,12 @@ window.addEventListener('keydown', function(e){
     if(e.code == "KeyS") playerYV = 1.5;
     if(e.code == "KeyD") playerXV = 1.5;
     if(e.code == "KeyA") playerXV = -1.5;
-    if(bulletState == 'notShooting'){
         if(e.code == "Space"){
-            bulletState = 'shooting';
-            bulletX = (playerX - 35);
-            bulletY = (playerY + 35);
+            bullets.push({
+                x: playerX,
+                y: playerY
+            });
         }  
-    }
 });
 
 window.addEventListener("keyup", function(e){
@@ -39,18 +37,21 @@ window.addEventListener("keyup", function(e){
 function update(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    if(bulletState == 'shooting'){
-        ctx.fillRect(bulletX, bulletY, bulletSize, bulletSize);
-        bulletY--;
-        if(bulletY < 0){
-            bulletState = 'notShooting';
-        }
-    }
+    bullets.forEach((bullet,index) => {
+            ctx.fillRect(bullet.x, bullet.y, bulletSize, bulletSize);
+
+            bullet.y-= 1;
+
+            if(bulletY < 0){
+                bullets.splice(index, 1);
+            }
+    });
 
     ctx.drawImage(playerImg, playerX, playerY, playerSize, playerSize);
 
     playerX+= playerXV;
     playerY+= playerYV;
+
     requestAnimationFrame(update);
 }
 
