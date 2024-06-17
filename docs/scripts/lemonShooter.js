@@ -23,8 +23,8 @@ window.addEventListener('keydown', function(e){
     if(e.code == "KeyA") playerXV = -1.5;
         if(e.code == "Space"){
             bullets.push({
-                x: playerX,
-                y: playerY
+                x: (playerX + 35),
+                y: (playerY + 35)
             });
         }  
 });
