@@ -22,7 +22,13 @@ window.addEventListener('keydown', function(e){
     if(e.code == "KeyS") playerYV = 1.5;
     if(e.code == "KeyD") playerXV = 1.5;
     if(e.code == "KeyA") playerXV = -1.5;
-    if(bulletState == 'notShooting') if(e.code == "Space") bulletState = 'shooting'; bulletX = (playerX - 35); bulletY = (playerY + 35);
+    if(bulletState == 'notShooting'){
+        if(e.code == "Space"){
+            bulletState = 'shooting';
+            bulletX = (playerX - 35);
+            bulletY = (playerY + 35);
+        }  
+    }
 });
 
 window.addEventListener("keyup", function(e){
