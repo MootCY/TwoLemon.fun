@@ -9,6 +9,11 @@ let playerXV = 0;
 let playerYV = 0;
 let playerSize = 70;
 
+let targetX = canvas.width/2;
+let targetY = 20;
+let targetWidth = 50;
+let targetHeight = 20;
+
 let bullets = [];
 
 let bulletSize = 10;
@@ -38,16 +43,20 @@ function update(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     bullets.forEach((bullet,index) => {
-            ctx.fillRect(bullet.x, bullet.y, bulletSize, bulletSize);
+        ctx.fillStyle = 'yellow';
+        ctx.fillRect(bullet.x, bullet.y, bulletSize, bulletSize);
 
-            bullet.y-= 1;
+        bullet.y-= 1;
 
-            if(bullet.y < 0){
-                bullets.splice(index, 1);
-            }
+        if(bullet.y < 0){
+            bullets.splice(index, 1);
+        }
     });
 
     ctx.drawImage(playerImg, playerX, playerY, playerSize, playerSize);
+
+    ctx.fillStyle = 'red';
+    ctx.fillRect(targetX, targetY, targetWidth, targetHeight);
 
     playerX+= playerXV;
     playerY+= playerYV;
