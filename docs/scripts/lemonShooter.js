@@ -15,8 +15,10 @@ let targetWidth = 50;
 let targetHeight = 20;
 
 let bullets = [];
-
 let bulletSize = 10;
+
+let shotsPerTargetMove = 0;
+let maxShotsPerTargetMove = 0;
 
 const playerImg = new Image();
 playerImg.src = 'images/Lemon.png';
@@ -46,7 +48,14 @@ function update(){
         ctx.fillStyle = 'yellow';
         ctx.fillRect(bullet.x, bullet.y, bulletSize, bulletSize);
 
-        bullet.y-= 1;
+        bullet.y-= 4;
+        
+        if(bullet.x + bulletSize > targetX &&
+            bullet.y + bulletSize > targetY &&
+            targetX + targetWidth > bullet.x &&
+            targetY + targetHeight > bullet.y){
+                bullets.splice(index, 1);
+            }
 
         if(bullet.y < 0){
             bullets.splice(index, 1);
@@ -57,6 +66,9 @@ function update(){
 
     ctx.fillStyle = 'red';
     ctx.fillRect(targetX, targetY, targetWidth, targetHeight);
+
+    ctx.font = "50px Arial";
+    ctx.fillText(maxShotsPerTargetMove,canvas.height/2-50,50);
 
     playerX+= playerXV;
     playerY+= playerYV;
