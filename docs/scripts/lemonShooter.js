@@ -17,17 +17,16 @@ let targetHeight = 20;
 let bullets = [];
 let bulletSize = 10;
 
-let shotsPerTargetMove = 0;
-let maxShotsPerTargetMove = 0;
+let score = 0;
 
 const playerImg = new Image();
 playerImg.src = 'images/Lemon.png';
 
 window.addEventListener('keydown', function(e){
-    if(e.code == "KeyW") playerYV = -2.5;
-    if(e.code == "KeyS") playerYV = 2.5;
-    if(e.code == "KeyD") playerXV = 2.5;
-    if(e.code == "KeyA") playerXV = -2.5;
+    if(e.code == "KeyW") playerYV = -4;
+    if(e.code == "KeyS") playerYV = 4;
+    if(e.code == "KeyD") playerXV = 4;
+    if(e.code == "KeyA") playerXV = -4;
         if(e.code == "Space"){
             bullets.push({
                 x: (playerX + 35),
@@ -59,7 +58,7 @@ function update(){
 
         if(bullet.y < 0){
             bullets.splice(index, 1);
-            shotsPerTargetMove++;
+            score++;
         }
     });
 
@@ -70,7 +69,7 @@ function update(){
 
     ctx.fillStyle = 'black';
     ctx.font = "80px Arial";
-    ctx.fillText(maxShotsPerTargetMove,canvas.width/2,canvas.height-20);
+    ctx.fillText(score,canvas.width/2,canvas.height-20);
 
     playerX+= playerXV;
     playerY+= playerYV;
@@ -80,11 +79,7 @@ function update(){
 
 function targetMove(){
     targetX = (Math.random()*canvas.width - 50) + 50;
-    if(shotsPerTargetMove > maxShotsPerTargetMove){
-        maxShotsPerTargetMove = shotsPerTargetMove;
-        shotsPerTargetMove = 0;
-    }
 }
 
-setInterval(targetMove,3000);
+setInterval(targetMove,5000);
 update()
