@@ -69,8 +69,8 @@ function update(){
     ctx.fillRect(targetX, targetY, targetWidth, targetHeight);
 
     ctx.fillStyle = 'black';
-    ctx.font = "50px Arial";
-    ctx.fillText(maxShotsPerTargetMove,0,canvas.height-50);
+    ctx.font = "80px Arial";
+    ctx.fillText(maxShotsPerTargetMove,canvas.width/2,canvas.height);
 
     playerX+= playerXV;
     playerY+= playerYV;
@@ -85,4 +85,5 @@ function targetMove(){
     }
 }
 
+setInterval(targetMove,3000);
 update()
