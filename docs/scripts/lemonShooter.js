@@ -11,7 +11,7 @@ let playerSize = 70;
 
 let targetX = canvas.width/2;
 let targetY = 20;
-let targetWidth = 50;
+let targetWidth = 80;
 let targetHeight = 20;
 
 let bullets = [];
@@ -24,10 +24,10 @@ const playerImg = new Image();
 playerImg.src = 'images/Lemon.png';
 
 window.addEventListener('keydown', function(e){
-    if(e.code == "KeyW") playerYV = -1.5;
-    if(e.code == "KeyS") playerYV = 1.5;
-    if(e.code == "KeyD") playerXV = 1.5;
-    if(e.code == "KeyA") playerXV = -1.5;
+    if(e.code == "KeyW") playerYV = -2.5;
+    if(e.code == "KeyS") playerYV = 2.5;
+    if(e.code == "KeyD") playerXV = 2.5;
+    if(e.code == "KeyA") playerXV = -2.5;
         if(e.code == "Space"){
             bullets.push({
                 x: (playerX + 35),
@@ -70,7 +70,7 @@ function update(){
 
     ctx.fillStyle = 'black';
     ctx.font = "80px Arial";
-    ctx.fillText(maxShotsPerTargetMove,canvas.width/2,canvas.height);
+    ctx.fillText(maxShotsPerTargetMove,canvas.width/2,canvas.height-20);
 
     playerX+= playerXV;
     playerY+= playerYV;
@@ -82,6 +82,7 @@ function targetMove(){
     targetX = (Math.random()*canvas.width - 50) + 50;
     if(shotsPerTargetMove > maxShotsPerTargetMove){
         maxShotsPerTargetMove = shotsPerTargetMove;
+        shotsPerTargetMove = 0;
     }
 }
 
