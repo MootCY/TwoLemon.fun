@@ -79,7 +79,7 @@ function update(){
 }
 
 function targetMove(){
-    targetX = (math.random()*canvas.width - 50) + 50;
+    targetX = (Math.random()*canvas.width - 50) + 50;
     if(shotsPerTargetMove > maxShotsPerTargetMove){
         maxShotsPerTargetMove = shotsPerTargetMove;
     }
