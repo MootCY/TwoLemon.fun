@@ -23,11 +23,9 @@ const playerImg = new Image();
 playerImg.src = 'images/Lemon.png';
 
 window.addEventListener('keydown', function(e){
-    if(e.code == "ArrowUp") playerYV = -4;
-    if(e.code == "ArrowDown") playerYV = 4;
     if(e.code == "ArrowRight") playerXV = 4;
     if(e.code == "ArrowLeft") playerXV = -4;
-        if(e.code == "Space"){
+        if(e.code == "ArrowUp"){
             bullets.push({
                 x: (playerX + 35),
                 y: (playerY + 35)
