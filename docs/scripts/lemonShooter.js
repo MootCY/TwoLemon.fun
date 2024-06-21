@@ -59,6 +59,7 @@ function update(){
 
         if(bullet.y < 0){
             bullets.splice(index, 1);
+            shotsPerTargetMove++;
         }
     });
 
@@ -67,13 +68,21 @@ function update(){
     ctx.fillStyle = 'red';
     ctx.fillRect(targetX, targetY, targetWidth, targetHeight);
 
+    ctx.fillStyle = 'black';
     ctx.font = "50px Arial";
-    ctx.fillText(maxShotsPerTargetMove,canvas.height/2-50,50);
+    ctx.fillText(maxShotsPerTargetMove,0,canvas.height-50);
 
     playerX+= playerXV;
     playerY+= playerYV;
 
     requestAnimationFrame(update);
+}
+
+function targetMove(){
+    targetX = (math.random()*canvas.width - 50) + 50;
+    if(shotsPerTargetMove > maxShotsPerTargetMove){
+        maxShotsPerTargetMove = shotsPerTargetMove;
+    }
 }
 
 update()
