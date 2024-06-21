@@ -23,10 +23,10 @@ const playerImg = new Image();
 playerImg.src = 'images/Lemon.png';
 
 window.addEventListener('keydown', function(e){
-    if(e.code == "KeyW") playerYV = -4;
-    if(e.code == "KeyS") playerYV = 4;
-    if(e.code == "KeyD") playerXV = 4;
-    if(e.code == "KeyA") playerXV = -4;
+    if(e.code == "ArrowUp") playerYV = -4;
+    if(e.code == "ArrowDown") playerYV = 4;
+    if(e.code == "ArrowRight") playerXV = 4;
+    if(e.code == "ArrowLeft") playerXV = -4;
         if(e.code == "Space"){
             bullets.push({
                 x: (playerX + 35),
@@ -36,8 +36,8 @@ window.addEventListener('keydown', function(e){
 });
 
 window.addEventListener("keyup", function(e){
-    if(e.code == "KeyW" || e.code == "KeyS") playerYV = 0;
-    if(e.code == "KeyA" || e.code == "KeyD") playerXV = 0;
+    if(e.code == "ArrowUp" || e.code == "ArrowDown") playerYV = 0;
+    if(e.code == "ArrowLeft" || e.code == "ArrowRight") playerXV = 0;
 });
 
 function update(){
@@ -54,11 +54,11 @@ function update(){
             targetX + targetWidth > bullet.x &&
             targetY + targetHeight > bullet.y){
                 bullets.splice(index, 1);
+                score++;
             }
 
         if(bullet.y < 0){
             bullets.splice(index, 1);
-            score++;
         }
     });
 
