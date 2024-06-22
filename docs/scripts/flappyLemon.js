@@ -51,16 +51,22 @@ function update(){
     ctx.fillRect(topPipeX,topPipeY,topPipeWidth,topPipeHeight);
     ctx.fillRect(bottomPipeX,bottomPipeY,bottomPipeWidth,bottomPipeHeight);
 
-    if(playerX + playerSize > bottomPipeX||topPipeX &&
-        playerY + playerSize > bottomPipeY||topPipeY &&
-        bottomPipeX||topPipeX + bottomPipeWidth||topPipeWidth > playerX &&
-        bottomPipeY||topPipeY + bottomPipeHeight||topPipeHeight > playerY){
+    if(playerX + playerSize > bottomPipeX &&
+        playerY + playerSize > bottomPipeY &&
+        bottomPipeX + bottomPipeWidth > playerX &&
+        bottomPipeY + bottomPipeHeight > playerY){
             score = 0;
             playerY = canvas.height/2-100;
             topPipeX = canvas.width;
             bottomPipeX = canvas.width;
             window.alert("You died!")
         }
+    else if(playerX + playerSize > topPipeX &&
+        playerY + playerSize > topPipeY &&
+        topPipeX + topPipeWidth > playerX &&
+        topPipeY + topPipeHeight > playerY){
+
+    }
 
     if(topPipeX<0&&bottomPipeX<0){
         topPipeX = canvas.width;
