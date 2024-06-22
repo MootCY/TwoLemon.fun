@@ -14,7 +14,7 @@ let playerImg = new Image();
 playerImg.src="images/Lemon.png";
 
 window.addEventListener("keydown",function(e){
-    if(e.code="Space")playerYV-=10;
+    if(e.code="Space")playerYV+=5;
 });
 
 function update(){
