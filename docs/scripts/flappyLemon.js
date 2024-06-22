@@ -11,8 +11,8 @@ let playerSize = 70;
 let score = 0;
 
 let gravity = 1;
-let canJump = true;
 let jumping = false;
+let jumpHeight = 4;
 
 let playerImg = new Image();
 playerImg.src="images/Lemon.png";
@@ -31,7 +31,7 @@ let topPipeY = bottomPipeY-bottomPipeHeight-gap;
 
 window.addEventListener("keydown",function(e){
     if(e.code=="Space"&&!jumping){
-        playerYV=7;
+        playerYV=jumpHeight;
         jumping = true;
     }
 });
@@ -93,6 +93,14 @@ function update(){
         topPipeHeight=300
         topPipeY = bottomPipeY-bottomPipeHeight-gap;
     }
+    if(bottomPipeY+bottomPipeHeight>canvas.height){
+        bottomPipeHeight+=200
+        topPipeY+=200;
+    }
+    else{
+        bottomPipeHeight=300
+        topPipeY = canvas.height-(Math.random()*(canvas.height-150))+1;
+    }
 
     topPipeX-=3;
     bottomPipeX-=3;
@@ -100,7 +108,9 @@ function update(){
     playerY-=playerYV;
     playerY+=gravity;
 
+    if(playerYV <= 0){
     jumping = false;
+    }
 
     requestAnimationFrame(update);
 }
