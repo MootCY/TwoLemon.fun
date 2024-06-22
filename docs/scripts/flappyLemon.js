@@ -19,27 +19,18 @@ playerImg.src="images/Lemon.png";
 
 let gap = 90;
 
-let bottomPipeHeight = 450;
+let bottomPipeHeight = 600;
 let bottomPipeWidth = 100;
 let bottomPipeX = canvas.width;
-let bottomPipeY = canvas.height-(Math.random()*(canvas.height-150))+1;
+let bottomPipeY = canvas.height-(Math.random()*(canvas.height-200))+1;
 
-let topPipeHeight = 450;
+let topPipeHeight = 600;
 let topPipeWidth = 100;
 let topPipeX = canvas.width;
 let topPipeY = bottomPipeY-bottomPipeHeight-gap;
 
-window.addEventListener("keydown",function(e){
-    if(e.code=="Space"&&!jumping){
+window.addEventListener("click",function(){
         playerYV=jumpHeight;
-        jumping = true;
-    }
-});
-
-window.addEventListener("keyup",function(e){
-    if(e.code=="Space"){
-        playerYV=0;
-    }
 });
 
 function update(){
@@ -59,6 +50,7 @@ function update(){
             playerY = canvas.height/2-100;
             topPipeX = canvas.width;
             bottomPipeX = canvas.width;
+            playerYV = 0;
             window.alert("You died!")
         }
     else if(playerX + playerSize > topPipeX &&
@@ -69,6 +61,7 @@ function update(){
             playerY = canvas.height/2-100;
             topPipeX = canvas.width;
             bottomPipeX = canvas.width;
+            playerYV = 0;
             window.alert("You died!")
     }
     if(playerY<0||playerY>canvas.height){
@@ -76,6 +69,7 @@ function update(){
         playerY = canvas.height/2-100;
         topPipeX = canvas.width;
         bottomPipeX = canvas.width;
+        playerYV = 0;
         window.alert("You died!")
     }
 
@@ -84,33 +78,12 @@ function update(){
         bottomPipeX = canvas.width;
     }
 
-
-    if(topPipeY<0){
-        topPipeHeight+=200
-        topPipeY-=200;
-    }
-    else{
-        topPipeHeight=300
-        topPipeY = bottomPipeY-bottomPipeHeight-gap;
-    }
-    if(bottomPipeY+bottomPipeHeight<canvas.height){
-        bottomPipeHeight+=200
-        topPipeY+=200;
-    }
-    else{
-        bottomPipeHeight=300
-        topPipeY = canvas.height-(Math.random()*(canvas.height-150))+1;
-    }
-
     topPipeX-=3;
     bottomPipeX-=3;
 
     playerY-=playerYV;
     playerY+=gravity;
-
-    if(playerYV <= 0){
-    jumping = false;
-    }
+    playerYV=0;
 
     requestAnimationFrame(update);
 }
