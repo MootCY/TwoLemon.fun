@@ -16,7 +16,7 @@ let canJump = true;
 let playerImg = new Image();
 playerImg.src="images/Lemon.png";
 
-let gap = 120;
+let gap = 90;
 
 let bottomPipeHeight = 450;
 let bottomPipeWidth = 100;
@@ -30,7 +30,7 @@ let topPipeY = bottomPipeY-bottomPipeHeight-gap;
 
 window.addEventListener("keydown",function(e){
     if(e.code=="Space"&&canJump){
-        playerYV=2;
+        playerYV=7;
         canJump=false;
     }
 });
@@ -65,7 +65,11 @@ function update(){
         playerY + playerSize > topPipeY &&
         topPipeX + topPipeWidth > playerX &&
         topPipeY + topPipeHeight > playerY){
-
+            score = 0;
+            playerY = canvas.height/2-100;
+            topPipeX = canvas.width;
+            bottomPipeX = canvas.width;
+            window.alert("You died!")
     }
 
     if(topPipeX<0&&bottomPipeX<0){
@@ -75,7 +79,7 @@ function update(){
 
 
     if(topPipeY<0){
-        topPipeHeight+=50
+        topPipeHeight+=200
     }
     else{
         topPipeHeight=300
