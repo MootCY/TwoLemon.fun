@@ -4,7 +4,7 @@ canvas.height = window.innerHeight;
 let ctx = canvas.getContext('2d');
 
 let playerX = 100;
-let playerY = canvas.height/2-100;
+let playerY = canvas.height/2-200;
 let playerYV = 0;
 let playerSize = 70;
 
@@ -22,7 +22,7 @@ let gap = 90;
 let bottomPipeHeight = 450;
 let bottomPipeWidth = 100;
 let bottomPipeX = canvas.width;
-let bottomPipeY = canvas.height-(Math.random()*400)+1;
+let bottomPipeY = canvas.height-(Math.random()*(canvas.height-150))+1;
 
 let topPipeHeight = 450;
 let topPipeWidth = 100;
@@ -30,9 +30,8 @@ let topPipeX = canvas.width;
 let topPipeY = bottomPipeY-bottomPipeHeight-gap;
 
 window.addEventListener("keydown",function(e){
-    if(e.code=="Space"&&canJump&&!jumping){
+    if(e.code=="Space"&&!jumping){
         playerYV=7;
-        canJump=false;
         jumping = true;
     }
 });
@@ -40,7 +39,6 @@ window.addEventListener("keydown",function(e){
 window.addEventListener("keyup",function(e){
     if(e.code=="Space"){
         playerYV=0;
-        canJump=true;
     }
 });
 
@@ -73,6 +71,13 @@ function update(){
             bottomPipeX = canvas.width;
             window.alert("You died!")
     }
+    if(playerY<0||playerY>canvas.height){
+        score = 0;
+        playerY = canvas.height/2-100;
+        topPipeX = canvas.width;
+        bottomPipeX = canvas.width;
+        window.alert("You died!")
+    }
 
     if(topPipeX<0&&bottomPipeX<0){
         topPipeX = canvas.width;
@@ -94,6 +99,8 @@ function update(){
 
     playerY-=playerYV;
     playerY+=gravity;
+
+    jumping = false;
 
     requestAnimationFrame(update);
 }
