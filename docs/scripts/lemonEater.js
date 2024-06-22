@@ -45,16 +45,17 @@ function update(){
     ctx.font = "80px Arial";
     ctx.fillText(score,canvas.width/2,90);
 
+    if(playerX < 0 || playerY < 0 || playerX + playerSize > canvas.width || playerY + playerSize > canvas.height){
+        score = 0;
+        playerSize = 20;
+        playerX = canvas.width/2;
+        playerY = canvas.height/2;
+        window.alert("You died!");
+    }
+
     if(playerX + playerSize > lemonX && playerY + playerSize > lemonY && lemonX + lemonSize > playerX && lemonY + lemonSize > playerY){
         score++;
         playerSize+=10;
-        if(playerX < 0 || playerY < 0 || playerX + playerSize > canvas.width || playerY + playerSize > canvas.height){
-            score = 0;
-            playerSize = 20;
-            playerX = canvas.width/2;
-            playerY = canvas.height/2;
-            window.alert("You died!");
-        }
         lemonX = Math.random()*canvas.width;
         lemonY = Math.random()*canvas.height;
         if (lemonX + lemonSize > canvas.width) {
