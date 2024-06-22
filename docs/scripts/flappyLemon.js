@@ -18,15 +18,15 @@ playerImg.src="images/Lemon.png";
 
 let gap = 120;
 
-let topPipeHeight = 450;
-let topPipeWidth = 100;
-let topPipeX = canvas.width;
-let topPipeY = topPipeY-bottomPipeHeight-gap;
-
 let bottomPipeHeight = 450;
 let bottomPipeWidth = 100;
 let bottomPipeX = canvas.width;
 let bottomPipeY = canvas.height-(Math.random()*400)+1;
+
+let topPipeHeight = 450;
+let topPipeWidth = 100;
+let topPipeX = canvas.width;
+let topPipeY = bottomPipeY-bottomPipeHeight-gap;
 
 window.addEventListener("keydown",function(e){
     if(e.code=="Space"&&canJump){
