@@ -14,7 +14,7 @@ let playerSize = 20;
 
 let lemonX = canvas.width/1.5;
 let lemonY = canvas.height/2;
-let lemonSize = 40;
+let lemonSize = 60;
 
 const lemonImg = new Image();
 lemonImg.src="images/Lemon.png";
@@ -24,10 +24,10 @@ lemonImg.onload = function() {
 };
 
 window.addEventListener("keydown", function(e){
-    if(e.code == "ArrowUp") playerYV = -2.5;
-    if(e.code == "ArrowDown") playerYV = 2.5;
-    if(e.code == "ArrowRight") playerXV = 2.5;
-    if(e.code == "ArrowLeft") playerXV = -2.5;
+    if(e.code == "ArrowUp") playerYV = -3;
+    if(e.code == "ArrowDown") playerYV = 3;
+    if(e.code == "ArrowRight") playerXV = 3;
+    if(e.code == "ArrowLeft") playerXV = -3;
 });
 
 window.addEventListener("keyup", function(e){
@@ -47,6 +47,7 @@ function update(){
 
     if(playerX + playerSize > lemonX && playerY + playerSize > lemonY && lemonX + lemonSize > playerX && lemonY + lemonSize > playerY){
         score++;
+        playerSize+=10;
         lemonX = Math.random()*canvas.width;
         lemonY = Math.random()*canvas.height;
         if (lemonX + lemonSize > canvas.width) {
