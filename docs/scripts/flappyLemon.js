@@ -93,7 +93,7 @@ function update(){
         topPipeHeight=300
         topPipeY = bottomPipeY-bottomPipeHeight-gap;
     }
-    if(bottomPipeY+bottomPipeHeight>canvas.height){
+    if(bottomPipeY+bottomPipeHeight<canvas.height){
         bottomPipeHeight+=200
         topPipeY+=200;
     }
