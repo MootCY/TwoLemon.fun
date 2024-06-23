@@ -50,6 +50,8 @@ function update(){
         playerSize = 20;
         playerX = canvas.width/2;
         playerY = canvas.height/2;
+        playerXV=0;
+        playerYV=0;
         window.alert("You died!");
     }
 

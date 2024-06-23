@@ -11,7 +11,7 @@ let playerSize = 70;
 let score = 0;
 
 let gravity = 1;
-let jumpHeight = 50;
+let jumpHeight = 40;
 
 let playerImg = new Image();
 playerImg.src="images/Lemon.png";
@@ -42,8 +42,9 @@ function update(){
     ctx.fillRect(topPipeX,topPipeY,topPipeWidth,topPipeHeight);
     ctx.fillRect(bottomPipeX,bottomPipeY,bottomPipeWidth,bottomPipeHeight);
 
+    ctx.fillStyle="black";
     ctx.font = "80px Arial";
-    ctx.fillText(score,canvas.width/2,30);
+    ctx.fillText(score,canvas.width/2,90);
 
 
     if(playerX + playerSize > bottomPipeX &&
