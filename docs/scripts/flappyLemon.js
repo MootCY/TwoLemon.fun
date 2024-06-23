@@ -12,20 +12,20 @@ let score = 0;
 
 let gravity = 0.5;
 let jumping = false;
-let jumpHeight = 15;
+let jumpHeight = 30;
 
 let playerImg = new Image();
 playerImg.src="images/Lemon.png";
 
-let gap = 110;
+let gap = 170;
 
-let bottomPipeHeight = 600;
-let bottomPipeWidth = 100;
+let bottomPipeHeight = 1000;
+let bottomPipeWidth = 50;
 let bottomPipeX = canvas.width;
 let bottomPipeY = canvas.height-(Math.random()*(canvas.height-200))+1;
 
-let topPipeHeight = 600;
-let topPipeWidth = 100;
+let topPipeHeight = 1000;
+let topPipeWidth = 50;
 let topPipeX = canvas.width;
 let topPipeY = bottomPipeY-bottomPipeHeight-gap;
 
@@ -50,6 +50,8 @@ function update(){
             playerY = canvas.height/2-100;
             topPipeX = canvas.width;
             bottomPipeX = canvas.width;
+            bottomPipeY = canvas.height-(Math.random()*(canvas.height-200))+1;
+            topPipeY=bottomPipeY-bottomPipeHeight-gap
             playerYV = 0;
             window.alert("You died!")
         }
@@ -61,6 +63,8 @@ function update(){
             playerY = canvas.height/2-100;
             topPipeX = canvas.width;
             bottomPipeX = canvas.width;
+            bottomPipeY = canvas.height-(Math.random()*(canvas.height-200))+1;
+            topPipeY=bottomPipeY-bottomPipeHeight-gap
             playerYV = 0;
             window.alert("You died!")
     }
@@ -69,13 +73,23 @@ function update(){
         playerY = canvas.height/2-100;
         topPipeX = canvas.width;
         bottomPipeX = canvas.width;
+        bottomPipeY = canvas.height-(Math.random()*(canvas.height-200))+1;
+        topPipeY=bottomPipeY-bottomPipeHeight-gap
         playerYV = 0;
         window.alert("You died!")
     }
 
     if(topPipeX<0&&bottomPipeX<0){
+        score++;
         topPipeX = canvas.width;
         bottomPipeX = canvas.width;
+        bottomPipeY = canvas.height-(Math.random()*(canvas.height-200))+1;
+        topPipeY=bottomPipeY-bottomPipeHeight-gap
+    }
+
+    if(bottomPipeY>canvas.width||topPipeY>0){
+        bottomPipeY = canvas.height-(Math.random()*(canvas.height-200))+1;
+        topPipeY=bottomPipeY-bottomPipeHeight-gap
     }
 
     topPipeX-=3;
