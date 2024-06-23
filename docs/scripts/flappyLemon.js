@@ -10,7 +10,7 @@ let playerSize = 70;
 
 let score = 0;
 
-let gravity = 0.5;
+let gravity = 2;
 let jumping = false;
 let jumpHeight = 30;
 
@@ -20,16 +20,17 @@ playerImg.src="images/Lemon.png";
 let gap = 170;
 
 let bottomPipeHeight = 1000;
-let bottomPipeWidth = 50;
+let bottomPipeWidth = 80;
 let bottomPipeX = canvas.width;
 let bottomPipeY = canvas.height-(Math.random()*(canvas.height-200))+1;
 
 let topPipeHeight = 1000;
-let topPipeWidth = 50;
+let topPipeWidth = 80;
 let topPipeX = canvas.width;
 let topPipeY = bottomPipeY-bottomPipeHeight-gap;
 
 window.addEventListener("click",function(){
+        gravity=0;
         playerYV=jumpHeight;
 });
 
@@ -98,6 +99,7 @@ function update(){
     playerY-=playerYV;
     playerY+=gravity;
     playerYV=0;
+    gravity=2;
 
     requestAnimationFrame(update);
 }
