@@ -16,15 +16,15 @@ let jumpHeight = 40;
 let playerImg = new Image();
 playerImg.src="images/Lemon.png";
 
-let gap = 170;
+let gap = 200;
 
 let bottomPipeHeight = 1000;
-let bottomPipeWidth = 80;
+let bottomPipeWidth = 120;
 let bottomPipeX = canvas.width;
 let bottomPipeY = canvas.height-(Math.random()*(canvas.height-200))+1;
 
 let topPipeHeight = 1000;
-let topPipeWidth = 80;
+let topPipeWidth = 120;
 let topPipeX = canvas.width;
 let topPipeY = bottomPipeY-bottomPipeHeight-gap;
 
