@@ -10,14 +10,14 @@ let playerSize = 70;
 
 let score = 0;
 
-let gravity = 1;
+let gravity = 0.5;
 let jumping = false;
-let jumpHeight = 4;
+let jumpHeight = 15;
 
 let playerImg = new Image();
 playerImg.src="images/Lemon.png";
 
-let gap = 90;
+let gap = 110;
 
 let bottomPipeHeight = 600;
 let bottomPipeWidth = 100;
