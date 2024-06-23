@@ -10,9 +10,8 @@ let playerSize = 70;
 
 let score = 0;
 
-let gravity = 2;
-let jumping = false;
-let jumpHeight = 30;
+let gravity = 1;
+let jumpHeight = 50;
 
 let playerImg = new Image();
 playerImg.src="images/Lemon.png";
@@ -42,6 +41,10 @@ function update(){
     ctx.fillStyle="green"
     ctx.fillRect(topPipeX,topPipeY,topPipeWidth,topPipeHeight);
     ctx.fillRect(bottomPipeX,bottomPipeY,bottomPipeWidth,bottomPipeHeight);
+
+    ctx.font = "80px Arial";
+    ctx.fillText(score,canvas.width/2,30);
+
 
     if(playerX + playerSize > bottomPipeX &&
         playerY + playerSize > bottomPipeY &&
@@ -99,7 +102,7 @@ function update(){
     playerY-=playerYV;
     playerY+=gravity;
     playerYV=0;
-    gravity=2;
+    gravity=1;
 
     requestAnimationFrame(update);
 }
