@@ -56,9 +56,9 @@ function update(){
             topPipeX = canvas.width;
             bottomPipeX = canvas.width;
             bottomPipeY = canvas.height-(Math.random()*(canvas.height-200))+1;
-            topPipeY=bottomPipeY-bottomPipeHeight-gap
+            topPipeY=bottomPipeY-bottomPipeHeight-gap;
             playerYV = 0;
-            window.alert("You died! Score: "+score)
+            window.alert("You died! Score: "+score);
         }
     else if(playerX + playerSize > topPipeX &&
         playerY + playerSize > topPipeY &&
@@ -69,9 +69,9 @@ function update(){
             topPipeX = canvas.width;
             bottomPipeX = canvas.width;
             bottomPipeY = canvas.height-(Math.random()*(canvas.height-200))+1;
-            topPipeY=bottomPipeY-bottomPipeHeight-gap
+            topPipeY=bottomPipeY-bottomPipeHeight-gap;
             playerYV = 0;
-            window.alert("You died! Score: "+score)
+            window.alert("You died! Score: "+score);
     }
     if(playerY<0||playerY>canvas.height){
         score = 0;
@@ -79,9 +79,9 @@ function update(){
         topPipeX = canvas.width;
         bottomPipeX = canvas.width;
         bottomPipeY = canvas.height-(Math.random()*(canvas.height-200))+1;
-        topPipeY=bottomPipeY-bottomPipeHeight-gap
+        topPipeY=bottomPipeY-bottomPipeHeight-gap;
         playerYV = 0;
-        window.alert("You died! Score: "+score)
+        window.alert("You died! Score: "+score);
     }
 
     if(topPipeX<0&&bottomPipeX<0){
