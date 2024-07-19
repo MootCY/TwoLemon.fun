@@ -20,7 +20,7 @@ window.addEventListener("keyup", function(e){
 });
 
 function update(){
-    ctx.drawImage(playerX, playerY, playerSize, playerSize);
+    ctx.fillRect(playerX, playerY, playerSize, playerSize);
     requestAnimationFrame(update);
 }
 update();
