@@ -27,6 +27,8 @@ window.addEventListener("keyup", function(e){
 function update(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
 
+    ctx.fillStyle = "white"
+
     ctx.fillRect(playerX, playerY, playerWidth, playerHeight);
 
     ctx.fillRect(ballX,ballY,ballSize,ballSize);
@@ -34,7 +36,7 @@ function update(){
     if(ballX <= 0 || ballX + ballSize >= canvas.width){
         ballXV = -ballXV
     }
-    else if(ballY > 0){
+    else if(ballY <= 0){
         ballYV = -ballYV
     }
     else if(ballY + ballSize >= canvas.width){
@@ -43,6 +45,13 @@ function update(){
         ballY = canvas.height/2;
         ballXV = Math.floor(Math.random()*4)-2;
         ballYV = -2;
+    }
+
+    if(playerX + playerWidth > ballX &&
+    playerY + playerHeight > ballY &&
+    ballX + ballSize > playerX &&
+    ballY + ballSize > playerY){
+        ballYV = -ballYV
     }
 
     ballX+=ballXV
