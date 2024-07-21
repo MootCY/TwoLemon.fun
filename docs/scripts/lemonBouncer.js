@@ -34,6 +34,8 @@ function update(){
     ballX+=ballXV
     ballY+=ballYV
 
+    playerX+= playerXV;
+
     requestAnimationFrame(update);
 }
 
