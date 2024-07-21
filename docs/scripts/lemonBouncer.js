@@ -25,7 +25,7 @@ window.addEventListener("keyup", function(e){
 });
 
 function update(){
-    ctx.clearRect(0,0);
+    ctx.clearRect(0,0,canvas.width,canvas.height);
 
     ctx.fillRect(playerX, playerY, playerWidth, playerHeight);
 
