@@ -31,11 +31,11 @@ function update(){
 
     ctx.fillRect(ballX,ballY,ballSize,ballSize);
 
-    if(ballX < canvas.width || ballX + ballSize > canvas.width || ballY < 0){
+    if(ballX < canvas.width || ballX + ballSize > canvas.width || ballY < canvas.height){
         ballXV = -ballXV
         ballYV = -ballYV
     }
-    else if(ballY + ballSize > canvas.height){
+    else if(ballY + ballSize > 0){
         ballX = canvas.width/2;
         ballY = canvas.height/2;
         ballXV = Math.floor(Math.random()*4)-2;
