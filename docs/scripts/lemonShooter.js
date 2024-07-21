@@ -6,7 +6,6 @@ const ctx = canvas.getContext('2d');
 let playerX = canvas.width/2;
 let playerY = canvas.height/2;
 let playerXV = 0;
-let playerYV = 0;
 let playerSize = 70;
 
 let targetX = canvas.width/2;
@@ -34,7 +33,6 @@ window.addEventListener('keydown', function(e){
 });
 
 window.addEventListener("keyup", function(e){
-    if(e.code == "ArrowUp" || e.code == "ArrowDown") playerYV = 0;
     if(e.code == "ArrowLeft" || e.code == "ArrowRight") playerXV = 0;
 });
 

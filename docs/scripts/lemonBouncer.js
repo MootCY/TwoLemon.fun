@@ -4,10 +4,16 @@ canvas.height = window.innerHeight;
 const ctx = canvas.getContext('2d');
 
 let playerX = canvas.width/2;
-let playerY = canvas.height/2;
+let playerY = canvas.height-60;
 let playerXV = 0;
-let playerYV = 0;
-let playerSize = 70;
+let playerWidth = 90;
+let playerHeight = 30;
+
+let ballX = canvas.width/2;
+let ballY = canvas.height/2;
+let ballXV = Math.floor(Math.random()*4)-2;
+let ballYV = -2;
+let ballSize = 40;
 
 window.addEventListener('keydown', function(e){
     if(e.code == "ArrowRight") playerXV = 4;
@@ -15,12 +21,20 @@ window.addEventListener('keydown', function(e){
 });
 
 window.addEventListener("keyup", function(e){
-    if(e.code == "ArrowUp" || e.code == "ArrowDown") playerYV = 0;
     if(e.code == "ArrowLeft" || e.code == "ArrowRight") playerXV = 0;
 });
 
 function update(){
-    ctx.fillRect(playerX, playerY, playerSize, playerSize);
+    ctx.clearRect(0,0);
+
+    ctx.fillRect(playerX, playerY, playerWidth, playerHeight);
+
+    ctx.fillRect(ballX,ballY,ballSize,ballSize);
+
+    ballX+=ballXV
+    ballY+=ballYV
+
     requestAnimationFrame(update);
 }
+
 update();
