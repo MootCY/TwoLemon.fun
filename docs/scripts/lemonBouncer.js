@@ -13,7 +13,12 @@ let ballX = canvas.width/2;
 let ballY = canvas.height/2;
 let ballXV;
 let ballYV = -4;
-let ballXV = 4;
+if(Math.floor(Math.random()*2)+1==1){
+    ballXV = 4;
+}
+else{
+    ballXV = -4;
+}
 let ballSize = 40;
 
 let ballImg = new Image();
@@ -54,7 +59,12 @@ function update(){
         window.alert("You died!");
         ballX = canvas.width/2;
         ballY = canvas.height/2;
-        ballXV = 4;
+        if(Math.floor(Math.random()*2)+1==1){
+            ballXV = 4;
+        }
+        else{
+            ballXV = -4;
+        }
         ballYV = -4;
     }
 
