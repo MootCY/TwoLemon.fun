@@ -6,20 +6,20 @@ const ctx = canvas.getContext('2d');
 let playerX = canvas.width/2;
 let playerY = canvas.height-60;
 let playerXV = 0;
-let playerWidth = 90;
-let playerHeight = 30;
+let playerWidth = 130;
+let playerHeight = 10;
 
 let ballX = canvas.width/2;
 let ballY = canvas.height/2;
 let ballXV;
-let ballYV = -4;
+let ballYV = -3;
 if(Math.floor(Math.random()*2)+1==1){
-    ballXV = 4;
+    ballXV = 3;
 }
 else{
-    ballXV = -4;
+    ballXV = -3;
 }
-let ballSize = 40;
+let ballSize = 80;
 
 let ballImg = new Image();
 ballImg.src = "images/Lemon.png";
@@ -56,24 +56,26 @@ function update(){
         ballYV = -ballYV
     }
     else if(ballY + ballSize >= canvas.width){
-        window.alert("You died!");
+        window.alert("You died! Bounces: "+bounces);
+        bounces=0;
+        playerXV=0;
         ballX = canvas.width/2;
         ballY = canvas.height/2;
         if(Math.floor(Math.random()*2)+1==1){
-            ballXV = 4;
+            ballXV = 3;
         }
         else{
-            ballXV = -4;
+            ballXV = -3;
         }
-        ballYV = -4;
+        ballYV = -3;
     }
 
-    if(playerX + playerWidth > ballX &&
-    playerY + playerHeight > ballY &&
-    ballX + ballSize > playerX &&
-    ballY + ballSize > playerY){
-        ballYV = -ballYV
+    if(ballY+ballSize>playerY){
+        ballYV = -ballYV;
         bounces++;
+    }
+    else if(ballY+ballSize>playerY+playerHeight&&ballY<playerY){
+        ballXV = -ballXV;
     }
 
     ballX+=ballXV
