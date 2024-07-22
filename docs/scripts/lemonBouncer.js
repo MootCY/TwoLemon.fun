@@ -70,12 +70,10 @@ function update(){
         ballYV = -3;
     }
 
-    if(ballY+ballSize>playerY){
+    if(ballY+ballSize>playerY&&ballX>playerX&&ballX+ballSize<playerX+playerWidth){
         ballYV = -ballYV;
+        ballY+=20;
         bounces++;
-    }
-    else if(ballY+ballSize>playerY+playerHeight&&ballY<playerY){
-        ballXV = -ballXV;
     }
 
     ballX+=ballXV
