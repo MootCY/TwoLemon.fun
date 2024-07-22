@@ -3,7 +3,3 @@ body{
     padding: 0;
     overflow: hidden;
 }
-
-#canvas{
-    background-color: hsl(0, 0%, 0%);
-}

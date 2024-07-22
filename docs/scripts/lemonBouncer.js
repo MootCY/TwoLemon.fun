@@ -11,9 +11,20 @@ let playerHeight = 30;
 
 let ballX = canvas.width/2;
 let ballY = canvas.height/2;
-let ballXV = Math.floor(Math.random()*4)-2;
-let ballYV = -2;
+let ballXV;
+let ballYV = -4;
+if(Math.floor(Math.random()*2)+1=1){
+    ballXV = 4;
+}
+else{
+    ballXV = -4;
+}
 let ballSize = 40;
+
+let ballImg = new Image();
+ballImg.src = "images/Lemon.png";
+
+let bounces = 0;
 
 window.addEventListener('keydown', function(e){
     if(e.code == "ArrowRight") playerXV = 4;
@@ -27,11 +38,16 @@ window.addEventListener("keyup", function(e){
 function update(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
 
-    ctx.fillStyle = "white"
+    ctx.fillStyle = "yellow"
 
     ctx.fillRect(playerX, playerY, playerWidth, playerHeight);
 
-    ctx.fillRect(ballX,ballY,ballSize,ballSize);
+    ctx.drawImage(ballImg,ballX,ballY,ballSize,ballSize);
+
+    ctx.fillStyle = "black";
+
+    ctx.font = "80px Arial";
+    ctx.fillText(bounces,canvas.width/2,90);
 
     if(ballX <= 0 || ballX + ballSize >= canvas.width){
         ballXV = -ballXV
@@ -43,8 +59,13 @@ function update(){
         window.alert("You died!");
         ballX = canvas.width/2;
         ballY = canvas.height/2;
-        ballXV = Math.floor(Math.random()*4)-2;
-        ballYV = -2;
+        if(Math.floor(Math.random()*2)+1=1){
+            ballXV = 4;
+        }
+        else{
+            ballXV = -4;
+        }
+        ballYV = -4;
     }
 
     if(playerX + playerWidth > ballX &&
@@ -52,6 +73,7 @@ function update(){
     ballX + ballSize > playerX &&
     ballY + ballSize > playerY){
         ballYV = -ballYV
+        bounces++;
     }
 
     ballX+=ballXV
