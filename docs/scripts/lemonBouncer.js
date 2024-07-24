@@ -22,6 +22,7 @@ else{
 let ballSize = 80;
 let ballImg = new Image();
 ballImg.src = "images/Lemon.png";
+
 let isBallColliding = false;
 
 let bounces = 0;
@@ -35,8 +36,6 @@ window.addEventListener("keyup", function(e){
     if(e.code == "ArrowLeft" || e.code == "ArrowRight") playerXV = 0;
 });
 
-let isBallColliding = false;
-
 function update() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = "yellow";
@@ -46,7 +45,6 @@ function update() {
     ctx.font = "80px Arial";
     ctx.fillText(bounces, canvas.width / 2, 90);
 
-    // Check for collisions with walls
     if (ballX <= 0 || ballX + ballSize >= canvas.width) {
         ballXV = -ballXV;
     } else if (ballY <= 0) {
@@ -65,7 +63,6 @@ function update() {
         }
     }
 
-    // Check for collision with player
     if (ballX + ballSize >= playerX &&
         ballX <= playerX + playerWidth &&
         ballY + ballSize >= playerY &&
@@ -90,10 +87,10 @@ function update() {
                     ballY = playerY + playerHeight;
                     break;
                 case 'left':
-                    ballX = playerX - ballSize; // Move ball to the left of player
+                    ballX = playerX - ballSize;
                     break;
                 case 'right':
-                    ballX = playerX + playerWidth; // Move ball to the right of player
+                    ballX = playerX + playerWidth;
                     break;
                 default:
                     break;
