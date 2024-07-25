@@ -26,6 +26,7 @@ ballImg.src = "images/Lemon.png";
 let isBallColliding = false;
 
 let bounces = 0;
+let highScore = localStorage.getItem('highScore')||0;
 
 window.addEventListener('keydown', function(e){
     if(e.code == "ArrowRight") playerXV = 4;
@@ -43,7 +44,9 @@ function update() {
     ctx.drawImage(ballImg, ballX, ballY, ballSize, ballSize);
     ctx.fillStyle = "black";
     ctx.font = "80px Arial";
-    ctx.fillText(bounces, canvas.width / 2, 90);
+    ctx.fillText(bounces, canvas.width/2, 90);
+    ctx.font = "80px Arial";
+    ctx.fillText("High Score: "+highScore,canvas.width/2,180);
 
     if (ballX <= 0 || ballX + ballSize >= canvas.width) {
         ballXV = -ballXV;
@@ -51,6 +54,10 @@ function update() {
         ballYV = -ballYV;
     } else if (ballY + ballSize >= canvas.height) {
         window.alert("You died! Bounces: " + bounces);
+        if(bounces>highScore){
+            highScore = bounces;
+            localStorage.setItem('highScore', highScore);
+        }
         bounces = 0;
         playerXV = 0;
         ballX = canvas.width / 2;
@@ -82,21 +89,24 @@ function update() {
             switch (collisionSide) {
                 case 'top':
                     ballY = playerY - ballSize;
+                    ballYV = -ballYV;
                     break;
                 case 'bottom':
                     ballY = playerY + playerHeight;
+                    ballYV = -ballYV;
                     break;
                 case 'left':
                     ballX = playerX - ballSize;
+                    ballXV = -ballXV;
                     break;
                 case 'right':
                     ballX = playerX + playerWidth;
+                    ballXV = -ballXV;
                     break;
                 default:
                     break;
             }
 
-            ballYV = -ballYV;
             bounces++;
             isBallColliding = true;
         }
