@@ -45,8 +45,8 @@ function update() {
     ctx.fillStyle = "black";
     ctx.font = "80px Arial";
     ctx.fillText(bounces, canvas.width/2, 90);
-    ctx.font = "80px Arial";
-    ctx.fillText("High Score: "+highScore,canvas.width/2,180);
+    ctx.font = "50px Arial";
+    ctx.fillText("High Score: "+highScore,canvas.width/2-40,180);
 
     if (ballX <= 0 || ballX + ballSize >= canvas.width) {
         ballXV = -ballXV;
