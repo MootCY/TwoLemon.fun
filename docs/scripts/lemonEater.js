@@ -5,6 +5,7 @@ const ctx = canvas.getContext("2d");
 
 const scoreCounter = document.getElementById('scoreCounter');
 let score = 0;
+let highScore = localStorage.getItem('highScore')||0;
 
 let playerX = canvas.width/2;
 let playerY = canvas.height/2;
@@ -46,13 +47,17 @@ function update(){
     ctx.fillText(score,canvas.width/2,90);
 
     if(playerX < 0 || playerY < 0 || playerX + playerSize > canvas.width || playerY + playerSize > canvas.height){
+        if(score>highScore){
+            highScore=score;
+            localStorage.setItem('highScore',highScore);
+        }
+        window.alert("You died! Score: "+score+', Highscore: '+highScore);
         score = 0;
         playerSize = 20;
         playerX = canvas.width/2;
         playerY = canvas.height/2;
         playerXV=0;
         playerYV=0;
-        window.alert("You died!");
     }
 
     if(playerX + playerSize > lemonX && playerY + playerSize > lemonY && lemonX + lemonSize > playerX && lemonY + lemonSize > playerY){

@@ -45,19 +45,17 @@ function update() {
     ctx.fillStyle = "black";
     ctx.font = "80px Arial";
     ctx.fillText(bounces, canvas.width/2, 90);
-    ctx.font = "50px Arial";
-    ctx.fillText("High Score: "+highScore,canvas.width/2-40,180);
 
     if (ballX <= 0 || ballX + ballSize >= canvas.width) {
         ballXV = -ballXV;
     } else if (ballY <= 0) {
         ballYV = -ballYV;
     } else if (ballY + ballSize >= canvas.height) {
-        window.alert("You died! Bounces: " + bounces);
         if(bounces>highScore){
             highScore = bounces;
             localStorage.setItem('highScore', highScore);
         }
+        window.alert("You died! Bounces: " + bounces+', Highscore: '+highScore);
         bounces = 0;
         playerXV = 0;
         ballX = canvas.width / 2;

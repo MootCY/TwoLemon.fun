@@ -9,6 +9,7 @@ let playerYV = 0;
 let playerSize = 70;
 
 let score = 0;
+let highScore = localStorage.getItem('highScore')||0;
 
 let gravity = 1;
 let jumpHeight = 40;
@@ -51,7 +52,11 @@ function update(){
         playerY + playerSize > bottomPipeY &&
         bottomPipeX + bottomPipeWidth > playerX &&
         bottomPipeY + bottomPipeHeight > playerY){
-            window.alert("You died! Score: "+score);
+            if(score>highScore){
+                highScore=score;
+                localStorage.setItem('highScore',highScore)
+            }
+            window.alert("You died! Score: "+score+', Highscore: '+highScore);
             score = 0;
             playerY = canvas.height/2-100;
             topPipeX = canvas.width;
