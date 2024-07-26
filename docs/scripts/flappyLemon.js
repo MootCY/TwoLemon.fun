@@ -54,7 +54,7 @@ function update(){
         bottomPipeY + bottomPipeHeight > playerY){
             if(score>highScore){
                 highScore=score;
-                localStorage.setItem('highScore',highScore)
+                localStorage.setItem('highScore',highScore);
             }
             window.alert("You died! Score: "+score+', Highscore: '+highScore);
             score = 0;
