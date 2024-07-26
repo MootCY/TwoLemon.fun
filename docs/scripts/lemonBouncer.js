@@ -58,6 +58,7 @@ function update() {
         window.alert("You died! Bounces: " + bounces+', Highscore: '+highScore);
         bounces = 0;
         playerXV = 0;
+        playerX = canvas.width/2;
         ballX = canvas.width / 2;
         ballY = canvas.height / 2;
         ballYV = -3;

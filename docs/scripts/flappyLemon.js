@@ -69,7 +69,11 @@ function update(){
         playerY + playerSize > topPipeY &&
         topPipeX + topPipeWidth > playerX &&
         topPipeY + topPipeHeight > playerY){
-            window.alert("You died! Score: "+score);
+            if(score>highScore){
+                highScore=score;
+                localStorage.setItem('highScore',highScore);
+            }
+            window.alert("You died! Score: "+score+', Highscore: '+highScore);
             score = 0;
             playerY = canvas.height/2-100;
             topPipeX = canvas.width;
