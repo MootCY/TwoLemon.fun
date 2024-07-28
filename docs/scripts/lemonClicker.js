@@ -41,7 +41,7 @@ clickMultiplier.addEventListener('click', function() {
 });
 
 lemomsPerSecondMultiplier.addEventListener('click', function() {
-    if (lemons >= lemomsPerSecondMultiplierPrice){
+    if (lemons >= lemonsPerSecondMultiplierPrice){
       lemons-= lemomsPerSecondMultiplierPrice;
       localStorage.setItem('lemons', lemons);
       counter.textContent = lemons + " Lemons";
@@ -52,7 +52,7 @@ lemomsPerSecondMultiplier.addEventListener('click', function() {
       localStorage.setItem('lps', lps);
       if (!lpsBought){
         lpsBought = true;
-        localStorage.setItem('lpsBought', 'true');
+        localStorage.setItem('lpsBought', lpsBought);
         lpsUpdater();
       }
     }
