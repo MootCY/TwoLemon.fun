@@ -1,7 +1,7 @@
 const counter = document.getElementById('counter');
 const lemon = document.getElementById('lemon');
 const clickMultiplier = document.getElementById('clickMultiplier');
-const lemomsPerSecondMultiplier = document.getElementById('lemomsPerSecondMultiplier');
+const lemonsPerSecondMultiplier = document.getElementById('lemonsPerSecondMultiplier');
 const rebirth = document.getElementById('Rebirth');
 
 let lemons = parseInt(localStorage.getItem('lemons')) || 0;
@@ -14,6 +14,8 @@ let lpsBought = localStorage.getItem('lpsBought') === 'true';
 let multiplier = parseInt(localStorage.getItem('multiplier')) || 1;
 
 counter.textContent = lemons + " Lemons";
+lemonsPerSecondMultiplier.innerHTML = "+" + multiplier + " Lemons per second<br>Cost: " + lemonsPerSecondMultiplierPrice + " Lemons";
+clickMultiplier.innerHTML = "+" + multiplier + " Lemons per click<br>Cost: " + clickMultiplierPrice + " Lemons";
 
 let lpsUpdaterTimeoutId = null;
 
@@ -40,14 +42,14 @@ clickMultiplier.addEventListener('click', function() {
   }
 });
 
-lemomsPerSecondMultiplier.addEventListener('click', function() {
+lemonsPerSecondMultiplier.addEventListener('click', function() {
     if (lemons >= lemonsPerSecondMultiplierPrice){
-      lemons-= lemomsPerSecondMultiplierPrice;
+      lemons-= lemonsPerSecondMultiplierPrice;
       localStorage.setItem('lemons', lemons);
       counter.textContent = lemons + " Lemons";
-      lemomsPerSecondMultiplierPrice*= 2;
-      localStorage.setItem('lemomsPerSecondMultiplierPrice', lemomsPerSecondMultiplierPrice);
-      lemomsPerSecondMultiplier.innerHTML = "+" + multiplier + " Lemons per second<br>Cost: " + lemomsPerSecondMultiplierPrice + " Lemons";
+      lemonsPerSecondMultiplierPrice*= 2;
+      localStorage.setItem('lemonsPerSecondMultiplierPrice', lemonsPerSecondMultiplierPrice);
+      lemonsPerSecondMultiplier.innerHTML = "+" + multiplier + " Lemons per second<br>Cost: " + lemonsPerSecondMultiplierPrice + " Lemons";
       lps+= multiplier;
       localStorage.setItem('lps', lps);
       if (!lpsBought){
@@ -87,9 +89,9 @@ rebirth.addEventListener('click', function() {
     localStorage.setItem('multiplier', multiplier);
     clickMultiplierPrice = 50;
     localStorage.setItem('clickMultiplierPrice', clickMultiplierPrice);
-    lemomsPerSecondMultiplierPrice = 100;
-    localStorage.setItem('lemomsPerSecondMultiplierPrice', lemomsPerSecondMultiplierPrice);
-    lemomsPerSecondMultiplier.innerHTML = "+" + multiplier + " Lemons per second<br>Cost: " + lemomsPerSecondMultiplierPrice + " Lemons";
+    lemonsPerSecondMultiplierPrice = 100;
+    localStorage.setItem('lemonsPerSecondMultiplierPrice', lemonsPerSecondMultiplierPrice);
+    lemonsPerSecondMultiplier.innerHTML = "+" + multiplier + " Lemons per second<br>Cost: " + lemonsPerSecondMultiplierPrice + " Lemons";
     clickMultiplier.innerHTML = "+" + multiplier + " Lemons per click<br>Cost: " + clickMultiplierPrice + " Lemons";
   }
 });
