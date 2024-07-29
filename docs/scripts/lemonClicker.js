@@ -16,6 +16,7 @@ let multiplier = parseInt(localStorage.getItem('multiplier')) || 1;
 counter.textContent = lemons + " Lemons";
 lemonsPerSecondMultiplier.innerHTML = "+" + multiplier + " Lemons per second<br>Cost: " + lemonsPerSecondMultiplierPrice + " Lemons";
 clickMultiplier.innerHTML = "+" + multiplier + " Lemons per click<br>Cost: " + clickMultiplierPrice + " Lemons";
+rebirth.innerHTML = "Rebirth<br>Cost: " + rebirthPrice + " Lemons"
 
 let lpsUpdaterTimeoutId = null;
 
