@@ -69,7 +69,7 @@ function update(){
     ctx.font = "80px Arial";
     ctx.fillText(score,canvas.width/2,canvas.height-20);
     ctx.font = "40px Arial";
-    ctx.fillText(timer,canvas.width/2,canvas.height-100);
+    ctx.fillText(timer,canvas.width/2+40,canvas.height-100);
 
     if(timer<=0){
         if(highScore>score){
