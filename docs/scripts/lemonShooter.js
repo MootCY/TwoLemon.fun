@@ -4,7 +4,7 @@ canvas.height = window.innerHeight;
 const ctx = canvas.getContext('2d');
 
 let playerX = canvas.width/2;
-let playerY = canvas.height/2-canvas.height/3;
+let playerY = canvas.height/2+canvas.height/3;
 let playerXV = 0;
 let playerSize = 70;
 
@@ -80,6 +80,8 @@ function update(){
             localStorage.setItem('highScore',highScore);
         }
         window.alert("Time's up! Score: "+score+', Highscore: '+highScore);
+        playerX = canvas.width/2;
+        timer = 30;
         score=0;
         playerX=0;
     }
