@@ -53,9 +53,6 @@ function update(){
             targetX + targetWidth > bullet.x &&
             targetY + targetHeight > bullet.y){
                 bullets.splice(index, 1);
-                score++;
-                playerX = canvas.width/2;
-                timer = 30;
             }
 
         if(bullet.y < 0){
