@@ -4,7 +4,7 @@ canvas.height = window.innerHeight;
 const ctx = canvas.getContext('2d');
 
 let playerX = canvas.width/2;
-let playerY = canvas.height/2;
+let playerY = canvas.height/2-canvas.height/3;
 let playerXV = 0;
 let playerSize = 70;
 
@@ -17,6 +17,9 @@ let bullets = [];
 let bulletSize = 10;
 
 let score = 0;
+let highScore = localStorage.getItem('highScore')||0;
+
+let timer = 30;
 
 const playerImg = new Image();
 playerImg.src = 'images/Lemon.png';
@@ -51,6 +54,8 @@ function update(){
             targetY + targetHeight > bullet.y){
                 bullets.splice(index, 1);
                 score++;
+                playerX = canvas.width/2;
+                timer = 30;
             }
 
         if(bullet.y < 0){
@@ -66,6 +71,18 @@ function update(){
     ctx.fillStyle = 'black';
     ctx.font = "80px Arial";
     ctx.fillText(score,canvas.width/2,canvas.height-20);
+    ctx.font = "40px Arial";
+    ctx.fillText(timer,canvas.width/2,canvas.height-100);
+
+    if(timer<=0){
+        if(highScore>score){
+            highScore=score;
+            localStorage.setItem('highScore',highScore);
+        }
+        window.alert("Time's up! Score: "+score+', Highscore: '+highScore);
+        score=0;
+        playerX=0;
+    }
 
     playerX+= playerXV;
 
@@ -76,5 +93,10 @@ function targetMove(){
     targetX = (Math.random()*canvas.width - 50) + 50;
 }
 
+function timerDown(){
+    timer--;
+}
+
+setInterval(timerDown,1000)
 setInterval(targetMove,5000);
 update()
