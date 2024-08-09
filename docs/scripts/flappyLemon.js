@@ -11,7 +11,7 @@ let playerSize = 100;
 let score = 0;
 let highScore = localStorage.getItem('highScore')||0;
 
-let gravity = 1.5;
+let gravity = 2;
 let jumpHeight = 60;
 
 let playerImg = new Image();
@@ -97,7 +97,8 @@ function update(){
 
     if(topPipeX<0&&bottomPipeX<0){
         score++;
-
+        pipeSpeed+=0.1;
+        gravity+=0.1;
         topPipeX = canvas.width;
         bottomPipeX = canvas.width;
         bottomPipeY = canvas.height-(Math.random()*(canvas.height-200))+1;
