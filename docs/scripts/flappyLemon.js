@@ -6,7 +6,7 @@ let ctx = canvas.getContext('2d');
 let playerX = 100;
 let playerY = canvas.height/2-200;
 let playerYV = 0;
-let playerSize = 100;
+let playerSize = 80;
 
 let score = 0;
 let highScore = localStorage.getItem('highScore')||0;
