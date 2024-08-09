@@ -29,6 +29,8 @@ let topPipeWidth = 120;
 let topPipeX = canvas.width;
 let topPipeY = bottomPipeY-bottomPipeHeight-gap;
 
+let pipeSpeed = 5;
+
 window.addEventListener("click",function(){
         gravity=0;
         playerYV=jumpHeight;
@@ -95,6 +97,7 @@ function update(){
 
     if(topPipeX<0&&bottomPipeX<0){
         score++;
+
         topPipeX = canvas.width;
         bottomPipeX = canvas.width;
         bottomPipeY = canvas.height-(Math.random()*(canvas.height-200))+1;
@@ -106,8 +109,8 @@ function update(){
         topPipeY=bottomPipeY-bottomPipeHeight-gap
     }
 
-    topPipeX-=6;
-    bottomPipeX-=6;
+    topPipeX-=pipeSpeed;
+    bottomPipeX-=pipeSpeed;
 
     playerY-=playerYV;
     playerY+=gravity;
