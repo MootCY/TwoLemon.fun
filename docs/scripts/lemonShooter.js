@@ -96,6 +96,6 @@ function timerDown(){
     timer--;
 }
 
-setInterval(timerDown,1000)
+setInterval(timerDown,1000);
 setInterval(targetMove,5000);
-update()
+update();

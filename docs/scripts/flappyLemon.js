@@ -6,13 +6,13 @@ let ctx = canvas.getContext('2d');
 let playerX = 100;
 let playerY = canvas.height/2-200;
 let playerYV = 0;
-let playerSize = 70;
+let playerSize = 100;
 
 let score = 0;
 let highScore = localStorage.getItem('highScore')||0;
 
-let gravity = 1;
-let jumpHeight = 40;
+let gravity = 1.5;
+let jumpHeight = 60;
 
 let playerImg = new Image();
 playerImg.src="images/Lemon.png";
@@ -106,8 +106,8 @@ function update(){
         topPipeY=bottomPipeY-bottomPipeHeight-gap
     }
 
-    topPipeX-=3;
-    bottomPipeX-=3;
+    topPipeX-=6;
+    bottomPipeX-=6;
 
     playerY-=playerYV;
     playerY+=gravity;
