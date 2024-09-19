@@ -11,21 +11,21 @@ let playerSize = 80;
 let score = 0;
 let highScore = localStorage.getItem('highScore')||0;
 
-let gravity = 4.5;
-let jumpHeight = 60;
+let gravity = 7;
+let jumpHeight = 80;
 
 let playerImg = new Image();
 playerImg.src="images/Lemon.png";
 
-let gap = 200;
+let gap = 250;
 
 let bottomPipeHeight = 1000;
-let bottomPipeWidth = 120;
+let bottomPipeWidth = 80;
 let bottomPipeX = canvas.width;
 let bottomPipeY = canvas.height-(Math.random()*(canvas.height-200))+1;
 
 let topPipeHeight = 1000;
-let topPipeWidth = 120;
+let topPipeWidth = 80;
 let topPipeX = canvas.width;
 let topPipeY = bottomPipeY-bottomPipeHeight-gap;
 
