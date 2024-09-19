@@ -11,7 +11,7 @@ let playerSize = 80;
 let score = 0;
 let highScore = localStorage.getItem('highScore')||0;
 
-let gravity = 7;
+let gravity = 12;
 let jumpHeight = 80;
 
 let playerImg = new Image();
