@@ -1,0 +1,10 @@
+body{
+    text-align: center;
+}
+#playButton{
+    width: 700px;
+    height: 300px;
+    padding: 50px;
+    font-size: 100px;
+    margin-top: 0.8vh;
+}
