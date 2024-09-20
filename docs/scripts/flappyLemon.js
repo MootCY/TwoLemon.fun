@@ -84,7 +84,7 @@ function update(){
             topPipeY=bottomPipeY-bottomPipeHeight-gap;
             playerYV = 0;
     }
-    if(playerY<0){
+    if(playerY>canvas.height){
         if(score>highScore){
             highScore=score;
             localStorage.setItem('highScore',highScore);
@@ -99,7 +99,7 @@ function update(){
         playerYV = 0;
     }
 
-    if(playerY>canvas.height){
+    if(playerY<0){
         playerY=0;
     }
 
