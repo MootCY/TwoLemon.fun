@@ -4,6 +4,5 @@ canvas.height = window.innerHeight;
 let ctx = canvas.getContext('2d');
 
 function update(){
-    
     requestAnimationFrame(update);
 }
