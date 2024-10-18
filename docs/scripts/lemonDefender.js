@@ -9,6 +9,12 @@ let playerXV = 0;
 let playerYV = 0;
 let playerSize = 100;
 
+let swordX = playerX/2 + swordHeight + 20;
+let swordY = playerY/2;
+let swordWidth = 20;
+let swordHeight = 70;
+
+
 window.addEventListener("keydown", function(e){
     if(e.code == "ArrowUp") playerYV = -3;
     if(e.code == "ArrowDown") playerYV = 3;
@@ -23,6 +29,8 @@ window.addEventListener("keyup", function(e){
 
 function update(){
     ctx.clearRect(0,0,canvas.width,canvas.height)
-    
+
+    ctx.fillRect(playerX,playerY,playerSize,playerSize)
+
     requestAnimationFrame(update);
 }

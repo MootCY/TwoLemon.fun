@@ -8,10 +8,15 @@ let playerY = canvas.height/2-200;
 let playerYV = 0;
 let playerSize = 80;
 
+let hitboxX = playerX;
+let hitboxY = playerY;
+let hitboxSize = 90;
+let hitboxOn = false;
+
 let score = 0;
 let highScore = localStorage.getItem('highScore')||0;
 
-let gravity = 5;
+let gravity = 3;
 let jumpHeight = 80;
 
 let playerImg = new Image();
@@ -29,19 +34,29 @@ let topPipeWidth = 80;
 let topPipeX = canvas.width;
 let topPipeY = bottomPipeY-bottomPipeHeight-gap;
 
-let pipeSpeed = 5;
+let pipeSpeed = 3;
 
 window.addEventListener("click",function(){
         gravity=0;
         playerYV=jumpHeight;
 });
 
+window.addEventListener('keydown', function(e){
+    if(e.code == "h") hitboxOn == true? hitboxOn = false : hitboxOn = true;
+});
+
 function update(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
-
+    
+    ctx.fillStyle="red";
+    if(hixboxOn==true){
+        ctx.fillRect(hitboxX,hitboxY,hitboxSize,hitboxSize);
+    }
+    
+    ctx.fillStyle="black";
     ctx.drawImage(playerImg,playerX,playerY,playerSize,playerSize);
 
-    ctx.fillStyle="green"
+    ctx.fillStyle="green";
     ctx.fillRect(topPipeX,topPipeY,topPipeWidth,topPipeHeight);
     ctx.fillRect(bottomPipeX,bottomPipeY,bottomPipeWidth,bottomPipeHeight);
 
@@ -123,8 +138,10 @@ function update(){
 
     playerY-=playerYV;
     playerY+=gravity;
+    hitboxX=playerX;
+    hitboxY=playerY;
     playerYV=0;
-    gravity=5;
+    gravity=3;
 
     requestAnimationFrame(update);
 }
