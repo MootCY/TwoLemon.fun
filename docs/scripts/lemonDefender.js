@@ -10,10 +10,10 @@ let playerYV = 0;
 let playerSize = 100;
 let dir = 'forward';
 
-let swordX = playerX/2;
-let swordY = playerY/2 - swordHeight - 20;
 let swordWidth = 20;
 let swordHeight = 70;
+let swordX = playerX/2;
+let swordY = playerY/2 - swordHeight - 20;
 
 window.addEventListener("keydown", function(e){
     if(e.code == "ArrowUp"){
