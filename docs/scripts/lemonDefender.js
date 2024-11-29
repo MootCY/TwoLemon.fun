@@ -61,6 +61,8 @@ function update(){
     ctx.fillRect(swordX,swordY,swordWidth,swordHeight);
     ctx.fillRect(playerX,playerY,playerSize,playerSize);
 
+    playerX+=playerXV;
+    playerY+=playerYV;
     requestAnimationFrame(update);
 }
 
