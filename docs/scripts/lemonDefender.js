@@ -17,7 +17,7 @@ let swordY = playerY/2 - swordHeight - 20;
 
 window.addEventListener("keydown", function(e){
     if(e.code == "ArrowUp"){
-        playerYV = -3;
+        playerYV = 3;
         swordX = playerX/2;
         swordY = playerY/2 - swordHeight - 20;
         swordWidth = 20;
@@ -25,7 +25,7 @@ window.addEventListener("keydown", function(e){
         dir = 'forward';
     }
     if(e.code == "ArrowDown"){
-        playerYV = 3;
+        playerYV = -3;
         swordX = playerX/2;
         swordY = playerY/2 + swordHeight + 20;
         swordWidth = 20;
@@ -33,7 +33,7 @@ window.addEventListener("keydown", function(e){
         dir = 'backwards';
     }
     if(e.code == "ArrowRight"){
-        playerXV = 3;
+        playerXV = -3;
         swordX = playerX/2 - swordWidth - 20;
         swordY = playerY/2;
         swordWidth = 70;
@@ -41,7 +41,7 @@ window.addEventListener("keydown", function(e){
         dir = 'right';
     }
     if(e.code == "ArrowLeft"){
-        playerXV = -3;
+        playerXV = 3;
         swordX = playerX/2 + swordWidth + 20;
         swordY = playerY/2;
         swordWidth = 70;
@@ -61,8 +61,6 @@ function update(){
     ctx.fillRect(swordX,swordY,swordWidth,swordHeight);
     ctx.fillRect(playerX,playerY,playerSize,playerSize);
 
-    swordX = playerX/2 + swordHeight + 20;
-    swordY = playerY/2; 
     requestAnimationFrame(update);
 }
 
