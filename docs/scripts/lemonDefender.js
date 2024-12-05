@@ -12,38 +12,38 @@ let dir = 'forward';
 
 let swordWidth = 20;
 let swordHeight = 70;
-let swordX = playerX/2;
-let swordY = playerY/2 - swordHeight - 20;
+let swordX = playerX+playerSize/2;
+let swordY = playerY/2 - (swordHeight + 20);
 
 window.addEventListener("keydown", function(e){
     if(e.code == "ArrowUp"){
-        playerYV = 3;
-        swordX = playerX/2;
-        swordY = playerY/2 - swordHeight - 20;
+        playerYV = -3;
+        swordX = playerX+playerSize/2;
+        swordY = playerY/2 - (swordHeight + 20);
         swordWidth = 20;
         swordHeight = 70;
         dir = 'forward';
     }
     if(e.code == "ArrowDown"){
-        playerYV = -3;
-        swordX = playerX/2;
-        swordY = playerY/2 + swordHeight + 20;
+        playerYV = 3;
+        swordX = playerX+playerSize/2;
+        swordY = playerY/2 - (swordHeight + 20);
         swordWidth = 20;
         swordHeight = 70;
         dir = 'backwards';
     }
     if(e.code == "ArrowRight"){
-        playerXV = -3;
+        playerXV = 3;
         swordX = playerX/2 - swordWidth - 20;
-        swordY = playerY/2;
+        swordY = playerY+playerSize/2;
         swordWidth = 70;
         swordHeight = 20;
         dir = 'right';
     }
     if(e.code == "ArrowLeft"){
-        playerXV = 3;
+        playerXV = -3;
         swordX = playerX/2 + swordWidth + 20;
-        swordY = playerY/2;
+        swordY = playerY+playerSize/2;
         swordWidth = 70;
         swordHeight = 20;
         dir = 'left';
